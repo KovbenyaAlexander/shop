@@ -1,13 +1,10 @@
 import React from 'react';
-import Counter from './components/Counter';
-import Async from './components/Async';
 import './style.scss';
+import Header from './components/Header/Header';
 
 const App = (): JSX.Element => (
-  <div className="app">
-    <Counter />
-    <hr />
-    <Async />
+  <div className=" app">
+    <Header />
   </div>
 );
 

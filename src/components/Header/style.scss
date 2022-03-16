@@ -1,0 +1,53 @@
+
+header{
+  background: #403C3B;
+  box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
+  font-family: 'Poppins', sans-serif;
+
+  .wrapper{
+    .h1{
+      position: absolute;
+      z-index: -1000;
+      opacity: 0;
+    }
+  
+    display: flex;
+    justify-content: space-around;
+    max-width: 1440px;
+    height: 99px;
+    margin: 0 auto;
+  
+    .search-input{
+      width: 555px;
+      height: 52px;
+      background: #504B4A;
+      border-radius: 10px;
+    }
+  
+    .calling_svg{
+      fill: white !important;
+      width: 50px;
+      height: 50px;
+    }
+  
+    .calling_svg:hover{
+      fill: rgb(21, 37, 180) !important;
+      transition: 1.2s all ease-in-out;
+      cursor: pointer;
+    }
+
+    .contacts{
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      font-family: 'Gilroy';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      color: #CFCFCF;
+
+      p{
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+  }
+}
