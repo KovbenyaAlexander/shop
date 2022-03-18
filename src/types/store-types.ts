@@ -17,6 +17,7 @@ export interface IFoodCard {
   image: string
   description: string
   weight: string
+  numberOfPurchase: number
 }
 export interface IUser{
   title: string;

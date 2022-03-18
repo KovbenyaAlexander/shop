@@ -19,3 +19,17 @@ export function setData(payload: IUser[]): AllActions {
     payload,
   };
 }
+
+export function adGoodsInCart(payload: number): AllActions {
+  return {
+    type: Actions.ADDGOODSINCART,
+    payload,
+  };
+}
+
+export function decreaseGoodsInCart(payload: number): AllActions {
+  return {
+    type: Actions.DECREASE_GOODSINCART,
+    payload,
+  };
+}
