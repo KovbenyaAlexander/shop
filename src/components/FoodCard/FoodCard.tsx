@@ -1,25 +1,38 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import './style.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { NavLink, useHistory } from 'react-router-dom';
 import { IFoodCard } from '../../types';
 import { adGoodsInCart, decreaseGoodsInCart } from '../../store/actions';
 import 'swiper/css';
 
 const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const addGoodsHandler = () => {
+  const addGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
     dispatch(adGoodsInCart(cardInfo.id));
   };
 
-  const decreaseGoodsHandler = () => {
+  const decreaseGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
     dispatch(decreaseGoodsInCart(cardInfo.id));
   };
 
+  const onCardClickHandler = (e: any) => {
+    if (e.target.dataset.isbtn !== 'true') {
+      history.push(`/food/${cardInfo.id}`);
+    }
+  };
+
   return (
-    <div className="card">
+
+    <div className="card" onClick={onCardClickHandler}>
 
       {cardInfo.numberOfPurchase > 0
         ? (
@@ -40,15 +53,15 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
 
       {cardInfo.numberOfPurchase > 0 ? (
         <div className="card__addGoodsinCart">
-          <button type="button" className="btn-minus" onClick={decreaseGoodsHandler}>
-            <FontAwesomeIcon icon={faMinus} />
+          <button type="button" data-isbtn="true" className="btn-minus" datatype="aa" onClick={decreaseGoodsHandler}>
+            <FontAwesomeIcon data-isbtn="true" icon={faMinus} />
           </button>
           <p className="card__price">
             {cardInfo.numberOfPurchase * cardInfo.price}
             &#x20bd;
           </p>
-          <button type="button" className="btn-plus" onClick={addGoodsHandler}>
-            <FontAwesomeIcon icon={faPlus} />
+          <button type="button" data-isbtn="true" className="btn-plus" onClick={addGoodsHandler}>
+            <FontAwesomeIcon data-isbtn="true" icon={faPlus} />
           </button>
         </div>
       ) : (
@@ -57,10 +70,10 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
             {cardInfo.price}
             &#x20bd;
           </p>
-          <button type="button" onClick={addGoodsHandler}>
+          <button data-isbtn="true" type="button" onClick={addGoodsHandler}>
             В корзину
             {' '}
-            <FontAwesomeIcon icon={faCartPlus} className="button__icon" />
+            <FontAwesomeIcon data-isbtn="true" icon={faCartPlus} className="button__icon" />
           </button>
         </div>
       )}
