@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { IStore } from '../../types';
 import CallingSVG from '../SVG/CallingSVG';
 import './style.scss';
 
 const Header = (): JSX.Element => {
   const [searchInputValue, setSearchInputValue] = useState('');
+  const orderSize = useSelector((state: IStore) => state.orderSize);
 
   const onInputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchInputValue(event.target.value);
@@ -29,9 +32,9 @@ const Header = (): JSX.Element => {
         </div>
 
         <div className="cart">
-          <button type="button">
+          <button type="button" className="cart-btn">
             Корзина
-            <span>7</span>
+            {orderSize > 0 && (<span className="cart-btn__counter">{orderSize}</span>)}
           </button>
         </div>
       </div>

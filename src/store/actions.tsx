@@ -20,14 +20,14 @@ export function setData(payload: IUser[]): AllActions {
   };
 }
 
-export function adGoodsInCart(payload: number): AllActions {
+export function adGoodsInCart(payload: string): AllActions {
   return {
     type: Actions.ADDGOODSINCART,
     payload,
   };
 }
 
-export function decreaseGoodsInCart(payload: number): AllActions {
+export function decreaseGoodsInCart(payload: string): AllActions {
   return {
     type: Actions.DECREASE_GOODSINCART,
     payload,

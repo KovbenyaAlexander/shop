@@ -7,8 +7,8 @@ export type AllActions =
   { type: typeof Actions.INC } |
   { type: typeof Actions.DEC } |
   { type: typeof Actions.SET_DATA, payload: IUser[] } |
-  { type: typeof Actions.ADDGOODSINCART, payload: number } |
-  { type: typeof Actions.DECREASE_GOODSINCART, payload: number };
+  { type: typeof Actions.ADDGOODSINCART, payload: string } |
+  { type: typeof Actions.DECREASE_GOODSINCART, payload: string };
 
 export default function reducer(state: IStore = initialStore, action: AllActions): IStore {
   switch (action.type) {
@@ -31,6 +31,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
     case Actions.ADDGOODSINCART:
       return {
         ...state,
+        orderSize: state.orderSize + 1,
         foodCards: {
           cold: state.foodCards.cold.map((item: IFoodCard) => {
             if (item.id === action.payload) {
@@ -65,6 +66,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
     case Actions.DECREASE_GOODSINCART: {
       return {
         ...state,
+        orderSize: state.orderSize - 1,
         foodCards: {
           cold: state.foodCards.cold.map((item: IFoodCard) => {
             if (item.id === action.payload) {

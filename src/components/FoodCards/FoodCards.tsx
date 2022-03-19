@@ -17,7 +17,8 @@ const FoodCards = (): JSX.Element => {
 
         <h3>Холодные закуски</h3>
         <Swiper
-          spaceBetween={50}
+          slidesOffsetBefore={20}
+          spaceBetween={30}
           slidesPerView={4.2}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
@@ -34,7 +35,8 @@ const FoodCards = (): JSX.Element => {
 
         <h3>Горячие закуски</h3>
         <Swiper
-          spaceBetween={50}
+          slidesOffsetBefore={20}
+          spaceBetween={30}
           slidesPerView={4.2}
           className="swiper-container"
         >
@@ -49,7 +51,8 @@ const FoodCards = (): JSX.Element => {
 
         <h3>Мясные блюда</h3>
         <Swiper
-          spaceBetween={50}
+          slidesOffsetBefore={20}
+          spaceBetween={30}
           slidesPerView={4.2}
           className="swiper-container"
         >

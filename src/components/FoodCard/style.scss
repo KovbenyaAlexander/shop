@@ -91,8 +91,12 @@
 
   &:hover{
     // box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
-    box-shadow: 0px 3px 5px rgba(114, 163, 121, 0.7);
-    transition: all .3s ease-in-out;
+    // box-shadow: 0px 3px 5px rgba(114, 163, 121, 0.7);
+    // box-shadow: 3px 6px 8px #72a379b3;
+    -webkit-box-shadow: 0px 3px 20px 10px rgba(114, 163, 121, 0.3);
+    -moz-box-shadow: 0px 3px 20px 10px rgba(114, 163, 121, 0.3);
+    box-shadow: 0px 3px 20px 10px rgba(114, 163, 121, 0.3);
+    transition: all .2s ease-in-out;
     cursor: pointer;
   }
 }

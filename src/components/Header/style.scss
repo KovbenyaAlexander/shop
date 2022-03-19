@@ -13,6 +13,7 @@ header{
   
     display: flex;
     justify-content: space-around;
+    align-items: center;
     max-width: 1440px;
     height: 99px;
     margin: 0 auto;
@@ -47,6 +48,34 @@ header{
 
       p{
         font-family: 'Montserrat Alternates', sans-serif;
+      }
+    }
+
+    .cart-btn{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 149px;
+      height: 52px;
+      background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      &__counter{
+        background-color: #fff;
+        display: inline-block;
+        color: black;
+        width: 30px;
+        height: 30px; 
+        border-radius: 50%;
+        line-height: 30px;
+      }
+      &:hover{
+        background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+        box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
+        transition: all .3s ease-in-out;
       }
     }
   }

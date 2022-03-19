@@ -2,6 +2,7 @@ export interface IStore {
   counter: number
   dataFromApi: IUser[]
   foodCards: IFoodCards
+  orderSize: number
 }
 
 export interface IFoodCards {
@@ -11,7 +12,7 @@ export interface IFoodCards {
 }
 
 export interface IFoodCard {
-  id: number
+  id: string
   name: string
   price: number
   image: string

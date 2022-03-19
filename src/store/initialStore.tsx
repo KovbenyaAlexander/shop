@@ -1,12 +1,14 @@
+import { v4 as uuidv4 } from 'uuid';
 import { IStore } from '../types/store-types';
 
 export const initialStore: IStore = {
   counter: 100,
   dataFromApi: [],
+  orderSize: 6,
   foodCards: {
     cold: [
       {
-        id: 1,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -15,7 +17,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 1,
       },
       {
-        id: 11,
+        id: uuidv4(),
         name: 'Индейка',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 200,
@@ -24,7 +26,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 5,
       },
       {
-        id: 111,
+        id: uuidv4(),
         name: 'Гусь',
         description: 'Фаршированный яблоками',
         price: 300,
@@ -33,7 +35,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 11111,
+        id: uuidv4(),
         name: 'Утка',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 400,
@@ -42,7 +44,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 111111,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированная рисом, курагой и айвой',
         price: 500,
@@ -51,7 +53,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 1111111,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -62,7 +64,7 @@ export const initialStore: IStore = {
     ],
     hot: [
       {
-        id: 2,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -71,7 +73,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 22,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -80,7 +82,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 222,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -89,7 +91,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 2222,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -98,7 +100,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 22222,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -107,7 +109,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 222222,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -116,7 +118,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 2222222,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -125,7 +127,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 222222222,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -137,7 +139,7 @@ export const initialStore: IStore = {
 
     meet: [
       {
-        id: 3,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -146,7 +148,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 33,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -155,7 +157,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 333,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -164,7 +166,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 3333,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -173,7 +175,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 33333,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -182,7 +184,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 333333,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -191,7 +193,7 @@ export const initialStore: IStore = {
         numberOfPurchase: 0,
       },
       {
-        id: 3333333,
+        id: uuidv4(),
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
