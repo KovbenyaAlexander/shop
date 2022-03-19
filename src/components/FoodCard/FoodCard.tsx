@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import './style.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IFoodCard } from '../../types';
 import { adGoodsInCart, decreaseGoodsInCart } from '../../store/actions';
 import 'swiper/css';
@@ -34,20 +34,28 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
 
       {cardInfo.numberOfPurchase > 0 ? (
         <div className="card__addGoodsinCart">
-          <button type="button" onClick={decreaseGoodsHandler}>-</button>
-          <p>
+          <button type="button" className="btn-minus" onClick={decreaseGoodsHandler}>
+            <FontAwesomeIcon icon={faMinus} />
+          </button>
+          <p className="card__price">
             {cardInfo.numberOfPurchase * cardInfo.price}
             &#x20bd;
           </p>
-          <button type="button" onClick={addGoodsHandler}>+</button>
+          <button type="button" className="btn-plus" onClick={addGoodsHandler}>
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
         </div>
       ) : (
         <div className="card__addGoodsinCart">
-          <p>
+          <p className="card__price">
             {cardInfo.price}
             &#x20bd;
           </p>
-          <button type="button" onClick={addGoodsHandler}>В корзину</button>
+          <button type="button" onClick={addGoodsHandler}>
+            В корзину
+            {' '}
+            <FontAwesomeIcon icon={faCartPlus} className="button__icon" />
+          </button>
         </div>
       )}
 

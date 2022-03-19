@@ -14,12 +14,14 @@ const FoodCards = (): JSX.Element => {
   return (
     <section className="food">
       <div className="wrapper">
-        <h3>ХОЛОДНЫЕ ЗАКУСКИ</h3>
+
+        <h3>Холодные закуски</h3>
         <Swiper
           spaceBetween={50}
           slidesPerView={4.2}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
+          className="swiper-container"
         >
           {coldFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
@@ -28,10 +30,13 @@ const FoodCards = (): JSX.Element => {
           ))}
         </Swiper>
 
-        <h3>ГОРЯЧИЕ ЗАКУСКИ</h3>
+        <hr />
+
+        <h3>Горячие закуски</h3>
         <Swiper
           spaceBetween={50}
           slidesPerView={4.2}
+          className="swiper-container"
         >
           {hotFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
@@ -39,10 +44,14 @@ const FoodCards = (): JSX.Element => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <hr />
+
         <h3>Мясные блюда</h3>
         <Swiper
           spaceBetween={50}
           slidesPerView={4.2}
+          className="swiper-container"
         >
 
           {meetFod.map((item: IFoodCard) => (
