@@ -33,6 +33,7 @@
     width: 240px;
     text-align: justify;
     font-size: 13px;
+    height: 50px;
   }
 
   &__addGoodsinCart{
@@ -46,6 +47,21 @@
     font-size: 20px;
     font-weight: bold;
     padding-top: 10px;
+  }
+
+  &__counterOfPurchase{
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 50px;
+    height: 50px;
+    background: #79B382;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    line-height: 2.5;
+    text-align: center;
+    font-weight: bold;
   }
 
   button{

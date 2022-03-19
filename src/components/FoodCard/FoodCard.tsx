@@ -20,6 +20,12 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
 
   return (
     <div className="card">
+
+      {cardInfo.numberOfPurchase > 0
+        ? (
+          <div className="card__counterOfPurchase">{cardInfo.numberOfPurchase}</div>
+        )
+        : <div className="card__img-wrapper" />}
       <img className="card__img" src={cardInfo.image} alt="food" />
       <div className="card__header">
         <span className="card__name">{cardInfo.name}</span>
