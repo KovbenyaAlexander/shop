@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import './style.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { IFoodCard, IFoodCards, IStore } from '../../types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { IFoodCard } from '../../types';
 import { adGoodsInCart, decreaseGoodsInCart } from '../../store/actions';
 import 'swiper/css';
 
@@ -19,19 +20,36 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
 
   return (
     <div className="card">
-      <img src={cardInfo.image} alt="food" />
-      <p>{cardInfo.name}</p>
-      <p>{cardInfo.description}</p>
-      <p>{cardInfo.price}</p>
-      <p>{cardInfo.weight}</p>
+      <img className="card__img" src={cardInfo.image} alt="food" />
+      <div className="card__header">
+        <span className="card__name">{cardInfo.name}</span>
+        <p className="card__weight">
+          Масса:
+          {' '}
+          {cardInfo.weight}
+        </p>
+      </div>
+
+      <p className="card__description">{cardInfo.description}</p>
 
       {cardInfo.numberOfPurchase > 0 ? (
-        <div>
-          <button type="button" onClick={addGoodsHandler}>+</button>
-          <p>{cardInfo.numberOfPurchase * cardInfo.price}</p>
+        <div className="card__addGoodsinCart">
           <button type="button" onClick={decreaseGoodsHandler}>-</button>
+          <p>
+            {cardInfo.numberOfPurchase * cardInfo.price}
+            &#x20bd;
+          </p>
+          <button type="button" onClick={addGoodsHandler}>+</button>
         </div>
-      ) : <div><button type="button" onClick={addGoodsHandler}>В корзину</button></div>}
+      ) : (
+        <div className="card__addGoodsinCart">
+          <p>
+            {cardInfo.price}
+            &#x20bd;
+          </p>
+          <button type="button" onClick={addGoodsHandler}>В корзину</button>
+        </div>
+      )}
 
     </div>
   );

@@ -6,10 +6,10 @@ import { IFoodCard, IFoodCards, IStore } from '../../types';
 import FoodCard from '../FoodCard/FoodCard';
 import 'swiper/css';
 
-const foodCards = (): JSX.Element => {
+const FoodCards = (): JSX.Element => {
   const coldFood = useSelector((state: IStore) => state.foodCards.cold);
   const hotFood = useSelector((state: IStore) => state.foodCards.hot);
-  const meet = useSelector((state: IStore) => state.foodCards.meet);
+  const meetFod = useSelector((state: IStore) => state.foodCards.meet);
 
   return (
     <section className="food">
@@ -26,17 +26,36 @@ const foodCards = (): JSX.Element => {
               <FoodCard cardInfo={item} />
             </SwiperSlide>
           ))}
-
-          {/* <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide> */}
-
         </Swiper>
+
+        <h3>ГОРЯЧИЕ ЗАКУСКИ</h3>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={4.2}
+        >
+          {hotFood.map((item: IFoodCard) => (
+            <SwiperSlide key={item.id}>
+              <FoodCard cardInfo={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <h3>Мясные блюда</h3>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={4.2}
+        >
+
+          {meetFod.map((item: IFoodCard) => (
+            <SwiperSlide key={item.id}>
+              <FoodCard cardInfo={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
       </div>
 
     </section>
   );
 };
 
-export default foodCards;
+export default FoodCards;

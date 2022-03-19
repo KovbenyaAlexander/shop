@@ -1,0 +1,49 @@
+.card{
+  background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Montserrat Alternates', sans-serif;
+
+  &__img{
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  &__name{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__weight{
+    font-size: 12px;
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    margin: 10px auto;
+  }
+
+  &__description{
+    margin: 0 auto;
+    width: 240px;
+    text-align: justify;
+    font-size: 13px;
+  }
+
+  &__addGoodsinCart{
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    margin: 10px auto;
+  }
+
+  button{
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    color: white;
+    height: 44px;
+    width: 137px;
+  }
+}
