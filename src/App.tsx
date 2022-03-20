@@ -9,7 +9,12 @@ import CardDescription from './components/CardDescription/CardDescription';
 const App = (): JSX.Element => (
   <div className=" app">
     <Header />
-    <Promo />
+
+    <Route path="/" exact>
+      <Promo />
+      <FoodCards />
+    </Route>
+
     <Route
       path="/food/:id"
       render={({ match }) => {
@@ -18,7 +23,6 @@ const App = (): JSX.Element => (
       }}
     />
 
-    <FoodCards />
     <div className="bottom-shadow" />
   </div>
 );

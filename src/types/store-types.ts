@@ -19,6 +19,10 @@ export interface IFoodCard {
   description: string
   weight: string
   numberOfPurchase: number
+  protein: number
+  fat: number
+  carbohydrates: number
+  calories: number
 }
 export interface IUser{
   title: string;
