@@ -10,7 +10,7 @@ export const initialStore: IStore = {
   foodCards: {
     cold: [
       {
-        id: uuidv4(),
+        id: '1',
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -23,7 +23,7 @@ export const initialStore: IStore = {
         calories: getRandomInt(10, 200),
       },
       {
-        id: uuidv4(),
+        id: '2',
         name: 'Индейка',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 200,
@@ -36,7 +36,7 @@ export const initialStore: IStore = {
         calories: getRandomInt(10, 200),
       },
       {
-        id: uuidv4(),
+        id: '3',
         name: 'Гусь',
         description: 'Фаршированный яблоками',
         price: 300,
@@ -90,7 +90,7 @@ export const initialStore: IStore = {
     ],
     hot: [
       {
-        id: uuidv4(),
+        id: '111',
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 100,
@@ -103,7 +103,7 @@ export const initialStore: IStore = {
         calories: getRandomInt(10, 200),
       },
       {
-        id: uuidv4(),
+        id: '112',
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 110,
@@ -116,7 +116,7 @@ export const initialStore: IStore = {
         calories: getRandomInt(10, 200),
       },
       {
-        id: uuidv4(),
+        id: '113',
         name: 'Ягненок',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 120,

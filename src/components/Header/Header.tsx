@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { IStore } from '../../types';
 import CallingSVG from '../SVG/CallingSVG';
 import './style.scss';
@@ -8,8 +9,14 @@ const Header = (): JSX.Element => {
   const [searchInputValue, setSearchInputValue] = useState('');
   const orderSize = useSelector((state: IStore) => state.orderSize);
 
+  const history = useHistory();
+
   const onInputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchInputValue(event.target.value);
+  };
+
+  const onCartClickHandler = () => {
+    history.push('/cart');
   };
 
   return (
@@ -31,12 +38,11 @@ const Header = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="cart">
-          <button type="button" className="cart-btn">
-            Корзина
-            {orderSize > 0 && (<span className="cart-btn__counter">{orderSize}</span>)}
-          </button>
-        </div>
+        <button type="button" className="cart-btn" onClick={onCartClickHandler}>
+          Корзина
+          {orderSize > 0 && (<span className="cart-btn__counter">{orderSize}</span>)}
+        </button>
+
       </div>
 
     </header>

@@ -8,7 +8,8 @@ export type AllActions =
   { type: typeof Actions.DEC } |
   { type: typeof Actions.SET_DATA, payload: IUser[] } |
   { type: typeof Actions.ADDGOODSINCART, payload: string } |
-  { type: typeof Actions.DECREASE_GOODSINCART, payload: string };
+  { type: typeof Actions.DECREASE_GOODSINCART, payload: string } |
+  { type: typeof Actions.DELETE_FOOD_FROM_CART, payload: string };
 
 export default function reducer(state: IStore = initialStore, action: AllActions): IStore {
   switch (action.type) {
@@ -27,7 +28,6 @@ export default function reducer(state: IStore = initialStore, action: AllActions
         ...state,
         dataFromApi: action.payload,
       };
-
     case Actions.ADDGOODSINCART:
       return {
         ...state,
@@ -62,7 +62,6 @@ export default function reducer(state: IStore = initialStore, action: AllActions
           }),
         },
       };
-
     case Actions.DECREASE_GOODSINCART: {
       return {
         ...state,
@@ -97,6 +96,47 @@ export default function reducer(state: IStore = initialStore, action: AllActions
           }),
         },
       };
+    }
+    case Actions.DELETE_FOOD_FROM_CART: {
+      let prevCountOfPurchase = 0;
+      const newState = {
+        ...state,
+
+        foodCards: {
+          cold: state.foodCards.cold.map((item: IFoodCard) => {
+            if (item.id === action.payload) {
+              prevCountOfPurchase = item.numberOfPurchase;
+              return {
+                ...item,
+                numberOfPurchase: 0,
+              };
+            }
+            return item;
+          }),
+          hot: state.foodCards.hot.map((item: IFoodCard) => {
+            if (item.id === action.payload) {
+              prevCountOfPurchase = item.numberOfPurchase;
+              return {
+                ...item,
+                numberOfPurchase: 0,
+              };
+            }
+            return item;
+          }),
+          meet: state.foodCards.meet.map((item: IFoodCard) => {
+            if (item.id === action.payload) {
+              prevCountOfPurchase = item.numberOfPurchase;
+              return {
+                ...item,
+                numberOfPurchase: 0,
+              };
+            }
+            return item;
+          }),
+        },
+      };
+      newState.orderSize -= prevCountOfPurchase;
+      return newState;
     }
     default:
       return state;

@@ -5,8 +5,8 @@ import { IFoodCard, IStore } from '../../types';
 import './style.scss';
 
 const CardDescription = ({ id }: { id: string }): JSX.Element => {
-  const food = useSelector((state: IStore) => state.foodCards);
-  const allCards = (Object.values(food)).flat();
+  const foodCards = useSelector((state: IStore) => state.foodCards);
+  const allCards = (Object.values(foodCards)).flat();
   const card = allCards.find((item: IFoodCard) => item.id === id);
 
   return (

@@ -33,3 +33,10 @@ export function decreaseGoodsInCart(payload: string): AllActions {
     payload,
   };
 }
+
+export function deleteFoodFromCart(payload: string): AllActions {
+  return {
+    type: Actions.DELETE_FOOD_FROM_CART,
+    payload,
+  };
+}

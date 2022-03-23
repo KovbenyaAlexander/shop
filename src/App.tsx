@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Promo from './components/Promo/Promo';
 import FoodCards from './components/FoodCards/FoodCards';
 import CardDescription from './components/CardDescription/CardDescription';
+import Cart from './components/Cart/Cart';
 
 const App = (): JSX.Element => (
   <div className=" app">
@@ -13,6 +14,10 @@ const App = (): JSX.Element => (
     <Route path="/" exact>
       <Promo />
       <FoodCards />
+    </Route>
+
+    <Route path="/cart" exact>
+      <Cart />
     </Route>
 
     <Route
