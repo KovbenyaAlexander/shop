@@ -9,3 +9,32 @@
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
+
+.cart-total{
+  display: flex;
+  width: 760px;
+  height: 105px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+  border-radius: 10px;
+  color: #fff;
+
+
+  &__btn{
+    width: 209px;
+    height: 50px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__btn-active{
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+  }
+
+
+}

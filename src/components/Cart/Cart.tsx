@@ -28,6 +28,8 @@ const Cart = (): JSX.Element => {
     dispatch(deleteFoodFromCart(id));
   };
 
+  const finalCost = allCards.reduce((acc: number, item: IFoodCard) => acc + item.price * item.numberOfPurchase, 0);
+
   return (
 
     <div className="cart">
@@ -62,6 +64,26 @@ const Cart = (): JSX.Element => {
         }
         return null;
       })}
+
+      <div className="cart-total">
+        <div>
+          <span>Итого:</span>
+          <span>{finalCost}</span>
+
+          {finalCost < 1499 ? <p>Минимальная сума заказа 1500&#x20bd;</p> : null}
+
+        </div>
+        {finalCost < 1499
+          ? (
+            <button disabled type="button" className="cart-total__btn"> go</button>
+          )
+          : (
+            <NavLink to="./order">
+              <button className="cart-total__btn cart-total__btn-active" type="button"> go</button>
+            </NavLink>
+          )}
+
+      </div>
 
     </div>
   );
