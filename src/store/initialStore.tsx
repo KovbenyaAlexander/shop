@@ -42,7 +42,7 @@ export const initialStore: IStore = {
         price: 300,
         image: './food3.png',
         weight: '100г',
-        numberOfPurchase: 0,
+        numberOfPurchase: 1,
         protein: getRandomInt(10, 200),
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
