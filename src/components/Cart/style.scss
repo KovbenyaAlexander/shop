@@ -51,24 +51,6 @@
     border-radius: 10px;
   }
 
-  button{
-    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-    border-radius: 10px;
-    width: 27px;
-    height: 27px;
-    color: #fff;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-
-    &:hover{
-      background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-      box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
-      transition: all .2s ease-in-out;
-      color: black
-    }
-  }
-
   &__order-counter{
     display: flex;
     align-items: center;
@@ -97,11 +79,29 @@
     margin-left: 10px;
     width: 100%;
   }
+
+  button{
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    width: 27px;
+    height: 27px;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+      background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+      box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
+      transition: all .2s ease-in-out;
+      color: black
+    }
+  }
 }
 
 .cart-total{
   display: flex;
-  width: 760px;
+  max-width: 760px;
   height: 105px;
   align-items: center;
   justify-content: space-between;
@@ -124,6 +124,4 @@
   &__btn-active{
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
   }
-
-
 }

@@ -20,9 +20,22 @@ const FoodCards = (): JSX.Element => {
           slidesOffsetBefore={20}
           spaceBetween={30}
           slidesPerView={4.2}
+          // breakpoints={{
+          //   // when window width is >= 640px
+          //   640: {
+          //     // width: ,
+          //     slidesPerView: 3,
+          //   },
+          //   // when window width is >= 768px
+          //   1500: {
+          //     // width: 1500,
+          //     slidesPerView: 4.2,
+          //   },
+          // }}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
           className="swiper-container"
+
         >
           {coldFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>

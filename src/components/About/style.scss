@@ -1,0 +1,33 @@
+
+.about{
+  background: url('../../../public/about-bg.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  max-width: 1363px;
+  margin: 0 auto;
+  
+  .wrapper{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+    .about-text{
+      width: 50%;
+      width: 388px;
+    }
+
+    .about-cards{
+      display: grid;
+      grid-template-columns: 228px 228px;
+      grid-template-rows: 228px 228px;
+      grid-gap: 30px;
+      &__card{
+        background: rgba(80, 75, 74, 0.9);
+        backdrop-filter: blur(10px)
+      }
+    }
+  }
+}
+
+

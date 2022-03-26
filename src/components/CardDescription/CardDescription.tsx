@@ -60,24 +60,3 @@ const CardDescription = ({ id }: { id: string }): JSX.Element => {
 };
 
 export default CardDescription;
-
-/*
-
-                <tr>
-                  <td>Калории</td>
-                  <td>{card.calories}</td>
-                </tr>
-                <tr>
-                  <td>Белки</td>
-                  <td>{card.proteins}</td>
-                </tr>
-                <tr>
-                  <td>Жиры</td>
-                  <td>{card.fats}</td>
-                </tr>
-                <tr>
-                  <td>Углеводы</td>
-                  <td>{card.carbohydrates}</td>
-                </tr>
-
-*/
