@@ -6,7 +6,7 @@ const getRandomInt = (min: number, max: number): number => Math.floor(Math.rando
 export const initialStore: IStore = {
   counter: 100,
   dataFromApi: [],
-  orderSize: 6,
+  orderSize: 7,
   foodCards: {
     cold: [
       {

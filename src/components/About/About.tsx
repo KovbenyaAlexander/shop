@@ -28,7 +28,7 @@ const About = (): JSX.Element => {
 
         <div className="about-cards">
           <div className="about-cards__card">
-            <Chef />
+            <Onion />
             <p>Свежайшие продукты</p>
           </div>
           <div className="about-cards__card">
@@ -36,16 +36,17 @@ const About = (): JSX.Element => {
             <p>Быстрая доставка</p>
           </div>
           <div className="about-cards__card">
-            <Onion />
-            <p>Всегда в наличии</p>
-          </div>
-          <div className="about-cards__card">
             <Chef />
             <p>Лучшие повара</p>
+          </div>
+          <div className="about-cards__card">
+            <Onion />
+            <p>Свежайшие продукты</p>
           </div>
 
         </div>
 
+        <div className="about__shadow" />
       </div>
 
     </section>
