@@ -30,7 +30,7 @@ const Header = (): JSX.Element => {
 
         <input className="search-input" type="text" value={searchInputValue} onChange={onInputChangeHandler} />
 
-        <div className="contacts">
+        <div className="header__contacts">
           <CallingSVG />
           <div className="contacts__phone">
             <p>Контакты</p>

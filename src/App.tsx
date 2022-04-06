@@ -7,6 +7,7 @@ import FoodCards from './components/FoodCards/FoodCards';
 import CardDescription from './components/CardDescription/CardDescription';
 import Cart from './components/Cart/Cart';
 import About from './components/About/About';
+import Contacts from './components/Contacts/Contacts';
 
 const App = (): JSX.Element => (
   <div className=" app">
@@ -16,6 +17,7 @@ const App = (): JSX.Element => (
       <Promo />
       <FoodCards />
       <About />
+      <Contacts />
     </Route>
 
     <Route path="/cart" exact>
