@@ -18,7 +18,7 @@ const Contacts = (): JSX.Element => {
         <hr className="contacts__hr" />
 
         <div className="contacts__adress">
-          <FontAwesomeIcon data-isbtn="true" icon={faLocationDot} className="contacts__icon" />
+          <FontAwesomeIcon icon={faLocationDot} className="contacts__icon" />
           <div>
             <p>Наш адрес:</p>
             <p>г. Киев, ул. Космонавтов, д. 7, офис 5</p>
@@ -26,7 +26,7 @@ const Contacts = (): JSX.Element => {
         </div>
 
         <div className="contacts__email">
-          <FontAwesomeIcon data-isbtn="true" icon={faEnvelope} className="contacts__icon" />
+          <FontAwesomeIcon icon={faEnvelope} className="contacts__icon" />
           <div>
             <p>Наша почта</p>
             <p>aaaa@gmail.com</p>
