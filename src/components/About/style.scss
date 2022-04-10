@@ -2,12 +2,26 @@
 .about{
   width: 100%;
   background: rgba(33, 31, 32, 1);
-  padding-top: 70px;
+  width: 100%;
+  padding-top: 30px;
   
-  &__container{
-    max-width: 1300px;
+  .wrapper{
+    background: url('../../../public/about-bg.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 610px;
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 5;
+  }
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
     margin: 0 auto;
 
     .about-text{
@@ -18,6 +32,8 @@
       font-size: 20px;
       line-height: 25px;
       font-family: 'Montserrat Alternates', sans-serif;
+      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      padding: 0 50px;
 
       h2{
         font-size: 32px;
@@ -30,7 +46,7 @@
       grid-template-columns: 228px 228px;
       grid-template-rows: 228px 228px;
       grid-gap: 30px;
-      padding-top: 70px;
+      padding: 70px 50px;
 
       &__card{
         display: flex;
@@ -51,19 +67,6 @@
         color: rgba(121, 178, 130, 1)
       }
     }
-  }
-
-  .wrapper{
-    background: url('../../../public/about-bg.png');
-    background-repeat: no-repeat;
-    background-position: right;
-    height: 610px;
-    max-width: 1363px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    // padding: 70px;
   }
 
   &__shadow{
