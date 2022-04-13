@@ -4,6 +4,8 @@
   background: rgba(33, 31, 32, 1);
   width: 100%;
   padding-top: 30px;
+
+
   
   .wrapper{
     background: url('../../../public/about-bg.png');
@@ -16,6 +18,10 @@
     justify-content: space-between;
     position: relative;
     z-index: 5;
+
+    -webkit-box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
   }
 
   &__container{
@@ -32,7 +38,9 @@
       font-size: 20px;
       line-height: 25px;
       font-family: 'Montserrat Alternates', sans-serif;
-      background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      // background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.7399334733893557) 80%, rgba(0,0,0,0) 100%);
+      background: rgb(27,27,27);
+      background: linear-gradient(90deg, rgba(27,27,27,1) 60%, rgba(28,28,28,0.73) 80%, rgba(25,25,25,0) 100%);
       padding: 0 50px;
 
       h2{
@@ -67,14 +75,6 @@
         color: rgba(121, 178, 130, 1)
       }
     }
-  }
-
-  &__shadow{
-    height: 610px;
-    width: 388px;
-    position: absolute;
-    right: 558px;
-    background: linear-gradient(to right, rgba(33, 31, 32, 1), rgba(68, 64, 63, 0));
   }
 
   &__btn{

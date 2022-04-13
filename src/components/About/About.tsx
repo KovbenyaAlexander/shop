@@ -47,7 +47,6 @@ const About = (): JSX.Element => {
           </div>
 
         </div>
-        <div className="about__shadow" />
       </div>
 
     </section>

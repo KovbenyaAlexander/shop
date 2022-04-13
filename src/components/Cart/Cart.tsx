@@ -42,8 +42,8 @@ const Cart = (): JSX.Element => {
           <FontAwesomeIcon icon={faArrowLeft} />
           {' '}
           к выбору блюда
-
         </Link>
+
         <h1>Корзина</h1>
 
         {allCards.map((item: IFoodCard) => {

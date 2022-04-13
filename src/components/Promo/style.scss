@@ -1,13 +1,20 @@
 .promo{
   width: 100%;
-  background: #403C3B;
+  background: #44403F;
+
+  // background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+
+
   margin-top: 99px;
   .promo-text{
     width: 829px;
     height: 484px;
     color: #fff;
-    background: rgb(64,60,59);
-    background: linear-gradient(90deg, rgba(64,60,59,1) 50%, rgba(255,255,255,0) 100%);
+    // background: rgb(64,60,59);
+    // background: linear-gradient(90deg, rgba(64,60,59,1) 50%, rgba(255,255,255,0) 100%);
+    background: rgb(27,27,27);
+    // background: linear-gradient(90deg, rgba(64,60,59,1) 50%, rgba(64,60,59,0.73) 75%, rgba(64,60,59,0) 100%);
+    background: linear-gradient(90deg, rgba(68,64,63,1) 50%, rgba(68,64,63,0.73) 75%, rgba(68,64,63,0) 100%);
   }
 
   .wrapper{

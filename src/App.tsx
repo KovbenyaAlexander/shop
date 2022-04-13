@@ -4,7 +4,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Promo from './components/Promo/Promo';
 import FoodCards from './components/FoodCards/FoodCards';
-import CardDescription from './components/CardDescription/CardDescription';
+import ProductDescription from './components/ProductDescription/ProductDescription';
 import Cart from './components/Cart/Cart';
 import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
@@ -30,7 +30,13 @@ const App = (): JSX.Element => (
       path="/food/:id"
       render={({ match }) => {
         const currentID = match.params.id;
-        return <CardDescription id={currentID} />;
+        return (
+          <>
+            <ProductDescription id={currentID} />
+            <Contacts />
+            <Footer />
+          </>
+        );
       }}
     />
 
