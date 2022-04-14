@@ -24,6 +24,7 @@ const App = (): JSX.Element => (
 
     <Route path="/cart" exact>
       <Cart />
+      <Footer />
     </Route>
 
     <Route

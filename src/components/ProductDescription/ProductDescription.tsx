@@ -101,11 +101,13 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
           slidesPerView={4.2}
           className="card-description__swiper-container"
         >
-          {allCards.map((item: IFoodCard) => (
-            <SwiperSlide key={item.id}>
-              <FoodCard cardInfo={item} />
-            </SwiperSlide>
-          ))}
+          {allCards
+            .filter((item: IFoodCard) => item.id !== card.id)
+            .map((item: IFoodCard) => (
+              <SwiperSlide key={item.id}>
+                <FoodCard cardInfo={item} />
+              </SwiperSlide>
+            ))}
         </Swiper>
 
       </div>
