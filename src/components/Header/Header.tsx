@@ -20,7 +20,7 @@ const Header = (): JSX.Element => {
       <div className="wrapper">
 
         <div className="logo">
-          <h1>LOGOS</h1>
+          <h1 className="unselectable-text">LOGOS</h1>
         </div>
 
         <div className="header__contacts">

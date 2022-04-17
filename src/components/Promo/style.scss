@@ -1,36 +1,41 @@
+@font-face {
+  font-family: 'Zing';
+  src: url('../../../public/fonts/Zing Rust Demo Base.ttf') format('truetype');
+}
+
+
 .promo{
   width: 100%;
-  background: #44403F;
-
-  // background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
-
-
+  background: rgba(33, 31, 32, 1);
   margin-top: 99px;
+
   .promo-text{
     width: 829px;
     height: 484px;
-    color: #fff;
-    // background: rgb(64,60,59);
-    // background: linear-gradient(90deg, rgba(64,60,59,1) 50%, rgba(255,255,255,0) 100%);
+
     background: rgb(27,27,27);
-    // background: linear-gradient(90deg, rgba(64,60,59,1) 50%, rgba(64,60,59,0.73) 75%, rgba(64,60,59,0) 100%);
-    background: linear-gradient(90deg, rgba(68,64,63,1) 50%, rgba(68,64,63,0.73) 75%, rgba(68,64,63,0) 100%);
+    background: linear-gradient(90deg, #211f20 45%, rgba(33, 31, 32, 0.9) 65%, rgba(33, 31, 32, 0) 100%);
+
+    p{
+      font-family: 'Zing', 'Open Sans' ;
+      font-style: italic;
+      font-size: 67px;
+      color: #fff;
+      transform: rotate(-8.37deg);
+      width: 600px;
+      text-align: center;
+      padding-top: 100px;
+
+    }
+
   }
 
   .wrapper{
     height: 484px;
     max-width: 1440px;
     margin: 0 auto;
-
     background: url('../../../public/promo-bg.png');
     background-repeat: no-repeat;
     background-position: right;
   }
 }
-
-
-/*
-background: rgb(64,60,59);
-background: linear-gradient(90deg, rgba(64,60,59,1) 50%, rgba(255,255,255,0) 100%);
-
-*/
