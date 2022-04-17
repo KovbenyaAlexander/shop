@@ -1,5 +1,5 @@
 
-header{
+.header{
   background: #403C3B;
   box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
   font-family: 'Montserrat Alternates', sans-serif;
@@ -10,25 +10,17 @@ header{
   z-index: 10;
   
   .wrapper{
-    .h1{
-      position: absolute;
-      z-index: -1000;
-      opacity: 0;
+    .logo{
+      color: #fff;
+      align-self: center;
+      text-align: center;
     }
-  
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
     max-width: 1440px;
     height: 99px;
     margin: 0 auto;
-  
-    .search-input{
-      width: 555px;
-      height: 52px;
-      background: #504B4A;
-      border-radius: 10px;
-    }
   
     .calling_svg{
       fill: white !important;
@@ -45,14 +37,15 @@ header{
     .header__contacts{
       font-family: 'Montserrat Alternates', sans-serif;
       display: flex;
-      font-family: 'Gilroy';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      color: #CFCFCF;
 
+      color: #CFCFCF;
+      justify-content: end;
+      align-items: center;
+      padding-right: 50px;
+      
       p{
         font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 18px;
       }
     }
 
@@ -60,6 +53,8 @@ header{
       display: flex;
       align-items: center;
       justify-content: space-around;
+      font-family: 'Montserrat Alternates', sans-serif;
+      align-self: center;
       width: 149px;
       height: 52px;
       background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
@@ -82,6 +77,34 @@ header{
         box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
         transition: all .3s ease-in-out;
       }
+    }
+  }
+
+  &__icon{
+    width: 20px;
+    height: 20px;
+    background-color: #618967;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+
+    &:hover{
+      background-color: #72A479;
+      transition: all .3s ease-in-out;
+    }
+
+  }
+
+  &__phone{
+    &-description{
+      font-size: 12px;
+      color: #CFCFCF;
+    }
+
+    &-number{
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
     }
   }
 }

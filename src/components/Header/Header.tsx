@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IStore } from '../../types';
-import CallingSVG from '../SVG/CallingSVG';
+
 import './style.scss';
 
 const Header = (): JSX.Element => {
-  const [searchInputValue, setSearchInputValue] = useState('');
   const orderSize = useSelector((state: IStore) => state.orderSize);
-
   const history = useHistory();
-
-  const onInputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setSearchInputValue(event.target.value);
-  };
 
   const onCartClickHandler = () => {
     history.push('/cart');
@@ -22,19 +18,16 @@ const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="wrapper">
-        <h1 className="h1">restaurant</h1>
 
         <div className="logo">
-          <p>LOGOS</p>
+          <h1>LOGOS</h1>
         </div>
 
-        <input className="search-input" type="text" value={searchInputValue} onChange={onInputChangeHandler} />
-
         <div className="header__contacts">
-          <CallingSVG />
-          <div className="contacts__phone">
-            <p>Контакты</p>
-            <p>+7 (999) 999-99-99</p>
+          <FontAwesomeIcon icon={faPhone} className="header__icon" />
+          <div className="header__phone">
+            <p className="header__phone-description">Контакты</p>
+            <p className="header__phone-number"> +7 (999) 999-99-99</p>
           </div>
         </div>
 

@@ -4,8 +4,6 @@
   background: rgba(33, 31, 32, 1);
   width: 100%;
   padding-top: 30px;
-
-
   
   .wrapper{
     background: url('../../../public/about-bg.png');
@@ -38,7 +36,6 @@
       font-size: 20px;
       line-height: 25px;
       font-family: 'Montserrat Alternates', sans-serif;
-      // background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.7399334733893557) 80%, rgba(0,0,0,0) 100%);
       background: rgb(27,27,27);
       background: linear-gradient(90deg, rgba(27,27,27,1) 60%, rgba(28,28,28,0.73) 80%, rgba(25,25,25,0) 100%);
       padding: 0 50px;
@@ -55,6 +52,8 @@
       grid-template-rows: 228px 228px;
       grid-gap: 30px;
       padding: 70px 50px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: #CFCFCF;
 
       &__card{
         display: flex;
