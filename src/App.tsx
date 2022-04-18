@@ -11,7 +11,7 @@ import Contacts from './components/Contacts/Contacts';
 import Footer from './components/Footer/Footer';
 
 const App = (): JSX.Element => (
-  <div className=" app">
+  <div className="app">
     <Header />
 
     <Route path="/" exact>

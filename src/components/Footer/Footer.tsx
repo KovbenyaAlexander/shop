@@ -2,11 +2,15 @@ import React from 'react';
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { IStore } from '../../types';
 import './style.scss';
 
 const Footer = (): JSX.Element => {
+  const isModalOpen = useSelector((state: IStore) => state.isModalOpen);
+
   const scrollToTopHandler = () => {
     window.scrollTo({
       top: 0,
@@ -34,7 +38,10 @@ const Footer = (): JSX.Element => {
           <p className="footer__link"><Link to="/" className="footer__link">Политика конфиденциальности</Link></p>
         </div>
 
-        <nav className="navigation">
+        <nav className={
+          isModalOpen ? 'navigation navigation-burger' : 'navigation'
+        }
+        >
           <ul className="navigation__list">
             <li className="navigation__item">
               <Link to="/" className="navigation__link">О ресторане</Link>

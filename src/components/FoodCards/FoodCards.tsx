@@ -19,19 +19,22 @@ const FoodCards = (): JSX.Element => {
         <Swiper
           slidesOffsetBefore={20}
           spaceBetween={30}
-          slidesPerView={4.2}
-          // breakpoints={{
-          //   // when window width is >= 640px
-          //   640: {
-          //     // width: ,
-          //     slidesPerView: 3,
-          //   },
-          //   // when window width is >= 768px
-          //   1500: {
-          //     // width: 1500,
-          //     slidesPerView: 4.2,
-          //   },
-          // }}
+          height={385}
+          breakpoints={{
+            319: {
+              slidesPerView: 1,
+              width: 300,
+            },
+
+            768: {
+              slidesPerView: 2,
+              width: 650,
+            },
+            1440: {
+              slidesPerView: 4.2,
+              width: 1440,
+            },
+          }}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
           className="swiper-container"
@@ -52,6 +55,22 @@ const FoodCards = (): JSX.Element => {
           spaceBetween={30}
           slidesPerView={4.2}
           className="swiper-container"
+          height={385}
+          breakpoints={{
+            319: {
+              slidesPerView: 1,
+              width: 300,
+            },
+
+            768: {
+              slidesPerView: 2,
+              width: 650,
+            },
+            1440: {
+              slidesPerView: 4.2,
+              width: 1440,
+            },
+          }}
         >
           {hotFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
@@ -68,6 +87,22 @@ const FoodCards = (): JSX.Element => {
           spaceBetween={30}
           slidesPerView={4.2}
           className="swiper-container"
+          height={385}
+          breakpoints={{
+            319: {
+              slidesPerView: 1,
+              width: 300,
+            },
+
+            768: {
+              slidesPerView: 2,
+              width: 650,
+            },
+            1440: {
+              slidesPerView: 4.2,
+              width: 1440,
+            },
+          }}
         >
 
           {meetFod.map((item: IFoodCard) => (

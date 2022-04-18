@@ -7,6 +7,7 @@ export const initialStore: IStore = {
   counter: 100,
   dataFromApi: [],
   orderSize: 7,
+  isModalOpen: false,
   foodCards: {
     cold: [
       {

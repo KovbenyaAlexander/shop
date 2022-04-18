@@ -27,6 +27,9 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
   const onCardClickHandler = (e: any) => {
     if (e.target.dataset.isbtn !== 'true') {
       history.push(`/food/${cardInfo.id}`);
+      window.scrollTo({
+        top: 0,
+      });
     }
   };
 

@@ -3,6 +3,7 @@ export interface IStore {
   dataFromApi: IUser[]
   foodCards: IFoodCards
   orderSize: number
+  isModalOpen: boolean
 }
 
 export interface IFoodCards {

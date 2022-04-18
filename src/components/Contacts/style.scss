@@ -5,6 +5,8 @@
   margin-top: -120px;
   background: rgba(33, 31, 32, 1);
 
+
+
   .wrapper{
     max-width: 1440px;
     height: 700px;
@@ -13,6 +15,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
+
+    -webkit-box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
   }
 
   .container{

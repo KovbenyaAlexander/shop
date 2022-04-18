@@ -28,3 +28,24 @@
     margin-bottom: 30px;
   }
 }
+
+
+
+@media screen and (min-width: 319px) {
+  .swiper-container {
+    width: 340px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .swiper-container {
+    width: 1440px;
+  }
+}

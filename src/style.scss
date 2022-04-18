@@ -11,3 +11,15 @@
   user-select: none;
 }
 
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+*::-webkit-scrollbar:vertical {
+  width: 5px;
+  background-color: black;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(158, 158, 158, 0.521);
+}
+

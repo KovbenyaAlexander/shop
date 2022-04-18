@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { toggleModal, closeModal } from '../../store/actions';
 import { IStore } from '../../types';
 
 import './style.scss';
@@ -10,17 +11,40 @@ import './style.scss';
 const Header = (): JSX.Element => {
   const orderSize = useSelector((state: IStore) => state.orderSize);
   const history = useHistory();
+  const isModalOpen = useSelector((state: IStore) => state.isModalOpen);
+  const dispatch = useDispatch();
 
   const onCartClickHandler = () => {
     history.push('/cart');
+    dispatch(closeModal());
+  };
+
+  const onClickLogoHandler = () => {
+    history.push('/');
+    dispatch(closeModal());
+  };
+
+  const onClickBurgerHandler = () => {
+    dispatch(toggleModal());
   };
 
   return (
     <header className="header">
       <div className="wrapper">
 
-        <div className="logo">
-          <h1 className="unselectable-text">LOGOS</h1>
+        <div className="header__logo-container">
+
+          <button
+            type="button"
+            className={
+              isModalOpen ? 'header__burger header__burger-active' : 'header__burger'
+            }
+            onClick={onClickBurgerHandler}
+          >
+            <span />
+          </button>
+
+          <button type="button" onClick={onClickLogoHandler} className="header__logo">LOGOS</button>
         </div>
 
         <div className="header__contacts">

@@ -95,13 +95,14 @@
       color: rgba(121, 178, 130, 1)
     }
   }
-
 }
 
-// .about-svg{
-//   fill: rgba(121, 178, 130, 1) !important;
-// }
 
 
 
 
+@media (max-width: 1000px){
+  .about{
+    display: none;
+  }
+}

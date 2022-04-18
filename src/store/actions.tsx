@@ -40,3 +40,15 @@ export function deleteFoodFromCart(payload: string): AllActions {
     payload,
   };
 }
+
+export function toggleModal(): AllActions {
+  return {
+    type: Actions.TOGGLE_MODAL,
+  };
+}
+
+export function closeModal(): AllActions {
+  return {
+    type: Actions.CLOSE_MODAL,
+  };
+}
