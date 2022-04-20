@@ -13,6 +13,7 @@ import 'swiper/css';
 const Cart = (): JSX.Element => {
   const foodCards = useSelector((state: IStore) => state.foodCards);
   const allCards = (Object.values(foodCards)).flat();
+  const cardsInCart = allCards.filter((card: IFoodCard) => card.inCart);
 
   const dispatch = useDispatch();
 
@@ -33,6 +34,7 @@ const Cart = (): JSX.Element => {
   return (
     <div className="cart">
       <div className="wrapper">
+
         <div className="cart__header">
           <Link className="cart__link-to-main" to="./">
             <FontAwesomeIcon icon={faArrowLeft} />
@@ -41,51 +43,54 @@ const Cart = (): JSX.Element => {
           </Link>
           <h2>Корзина</h2>
         </div>
-        <ul>
-          {allCards.map((item: IFoodCard) => {
-            if (item.inCart) {
-              return (
-                <li key={item.id} className="cart-item">
-                  <img className="cart-item__img" src={item.image} alt="img" />
-                  <div className="cart-item__description">
-                    <h3>{item.name}</h3>
-                    <p>{item.description}</p>
-                  </div>
-                  <div className="cart-item__controls">
-                    <div>
-                      <button type="button" disabled={item.numberOfPurchase < 1} onClick={() => decFoodHandler(item.id)}>
-                        <FontAwesomeIcon icon={faMinus} />
-                      </button>
-                      <span className="cart-item__price">{item.numberOfPurchase}</span>
-                      <button type="button" onClick={() => incFoodHandler(item.id)}>
-                        <FontAwesomeIcon icon={faPlus} />
+
+        <ul className="cart-list">
+          {cardsInCart.length
+            ? (
+              <>
+                {cardsInCart.map((item: IFoodCard) => (
+                  <li key={item.id} className="cart-list-item">
+                    <img className="cart-list-item__img" src={item.image} alt="img" />
+                    <div className="cart-list-item__description">
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                    <div className="cart-list-item__controls">
+                      <div>
+                        <button type="button" disabled={item.numberOfPurchase < 1} onClick={() => decFoodHandler(item.id)}>
+                          <FontAwesomeIcon icon={faMinus} />
+                        </button>
+                        <span className="cart-list-item__price">{item.numberOfPurchase}</span>
+                        <button type="button" onClick={() => incFoodHandler(item.id)}>
+                          <FontAwesomeIcon icon={faPlus} />
+                        </button>
+                      </div>
+                      <span>
+                        {item.price * item.numberOfPurchase}
+                      </span>
+                      <button type="button" onClick={() => deleteFoodHandler(item.id)}>
+                        <FontAwesomeIcon icon={faXmark} />
                       </button>
                     </div>
-                    <span>
-                      {item.price * item.numberOfPurchase}
-                    </span>
-                    <button type="button" onClick={() => deleteFoodHandler(item.id)}>
-                      <FontAwesomeIcon icon={faXmark} />
-                    </button>
-                  </div>
-                </li>
-              );
-            }
-            return null;
-          })}
+                  </li>
+                ))}
+              </>
+            ) : <p className="cart__empty-msg">Корзина пуста</p> }
         </ul>
+
         <hr className="cart__hr" />
-        <div className="cart__add-block">
+
+        <div className="cart__add-goods">
           <h2>добавить к заказу</h2>
-          <div className="cart__add-block-wrapper">
+          <div className="cart__add-goods-wrapper">
             {
               allCards
                 .filter((item: IFoodCard) => item.numberOfPurchase === 0)
                 .map((item: IFoodCard, id: number) => {
                   if (item.numberOfPurchase === 0 && id < 4) {
                     return (
-                      <div key={item.id} className="cart__add-block-item">
-                        <img className="cart__add-block-item-img" src={item.image} alt="img" />
+                      <div key={item.id} className="cart__add-goods-item">
+                        <img className="cart__add-goods-item-img" src={item.image} alt="img" />
                         <p>{item.name}</p>
                         <span>
                           Добавить
@@ -125,7 +130,6 @@ const Cart = (): JSX.Element => {
         </div>
         <br />
       </div>
-
     </div>
   );
 };
