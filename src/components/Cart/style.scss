@@ -119,6 +119,17 @@
       transition: all .2s ease-in-out;
       color: black
     }
+
+    &:disabled{
+      background: grey;
+      color: black
+    }
+
+    &:disabled:hover{
+      box-shadow: none;
+      cursor: auto;
+    }
+
   }
 }
 

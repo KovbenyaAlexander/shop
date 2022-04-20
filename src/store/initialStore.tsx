@@ -22,6 +22,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: true,
       },
       {
         id: '2',
@@ -35,6 +36,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: true,
       },
       {
         id: '3',
@@ -48,6 +50,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: true,
       },
       {
         id: uuidv4(),
@@ -61,6 +64,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -74,6 +78,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -87,6 +92,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
     ],
     hot: [
@@ -102,6 +108,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: '112',
@@ -115,6 +122,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: '113',
@@ -128,6 +136,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -141,6 +150,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -154,6 +164,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -167,6 +178,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -180,6 +192,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -193,6 +206,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
     ],
 
@@ -209,6 +223,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -222,6 +237,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -235,6 +251,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -248,6 +265,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -261,6 +279,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -274,6 +293,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
       {
         id: uuidv4(),
@@ -287,6 +307,7 @@ export const initialStore: IStore = {
         fat: getRandomInt(10, 200),
         carbohydrates: getRandomInt(10, 200),
         calories: getRandomInt(10, 200),
+        inCart: false,
       },
 
     ],

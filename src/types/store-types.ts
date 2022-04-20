@@ -24,6 +24,7 @@ export interface IFoodCard {
   fat: number
   carbohydrates: number
   calories: number
+  inCart: boolean
 }
 export interface IUser{
   title: string;

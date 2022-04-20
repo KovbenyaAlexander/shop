@@ -39,6 +39,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
             if (item.id === action.payload) {
               return {
                 ...item,
+                inCart: true,
                 numberOfPurchase: item.numberOfPurchase + 1,
               };
             }
@@ -48,6 +49,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
             if (item.id === action.payload) {
               return {
                 ...item,
+                inCart: true,
                 numberOfPurchase: item.numberOfPurchase + 1,
               };
             }
@@ -57,6 +59,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
             if (item.id === action.payload) {
               return {
                 ...item,
+                inCart: true,
                 numberOfPurchase: item.numberOfPurchase + 1,
               };
             }
@@ -110,6 +113,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
               prevCountOfPurchase = item.numberOfPurchase;
               return {
                 ...item,
+                inCart: false,
                 numberOfPurchase: 0,
               };
             }
@@ -120,6 +124,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
               prevCountOfPurchase = item.numberOfPurchase;
               return {
                 ...item,
+                inCart: false,
                 numberOfPurchase: 0,
               };
             }
@@ -130,6 +135,7 @@ export default function reducer(state: IStore = initialStore, action: AllActions
               prevCountOfPurchase = item.numberOfPurchase;
               return {
                 ...item,
+                inCart: false,
                 numberOfPurchase: 0,
               };
             }

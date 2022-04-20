@@ -43,7 +43,7 @@ const Cart = (): JSX.Element => {
         </div>
         <ul>
           {allCards.map((item: IFoodCard) => {
-            if (item.numberOfPurchase > 0) {
+            if (item.inCart) {
               return (
                 <li key={item.id} className="cart-item">
                   <img className="cart-item__img" src={item.image} alt="img" />
@@ -53,7 +53,7 @@ const Cart = (): JSX.Element => {
                   </div>
                   <div className="cart-item__controls">
                     <div>
-                      <button type="button" onClick={() => decFoodHandler(item.id)}>
+                      <button type="button" disabled={item.numberOfPurchase < 1} onClick={() => decFoodHandler(item.id)}>
                         <FontAwesomeIcon icon={faMinus} />
                       </button>
                       <span className="cart-item__price">{item.numberOfPurchase}</span>
