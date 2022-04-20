@@ -33,7 +33,6 @@ const Header = (): JSX.Element => {
       <div className="wrapper">
 
         <div className="header__logo-container">
-
           <button
             type="button"
             className={
@@ -45,19 +44,30 @@ const Header = (): JSX.Element => {
           </button>
 
           <button type="button" onClick={onClickLogoHandler} className="header__logo">LOGOS</button>
+
         </div>
 
         <div className="header__contacts">
           <FontAwesomeIcon icon={faPhone} className="header__icon" />
           <div className="header__phone">
-            <p className="header__phone-description">Контакты</p>
+            <p className="header__phone-description">Наш телефон</p>
             <p className="header__phone-number"> +7 (999) 999-99-99</p>
           </div>
         </div>
 
         <button type="button" className="cart-btn" onClick={onCartClickHandler}>
           Корзина
-          {orderSize > 0 && (<span className="cart-btn__counter">{orderSize}</span>)}
+
+          {orderSize > 0
+            ? (
+              <>
+                {orderSize < 100
+                  ? <span className="cart-btn__counter">{orderSize}</span>
+                  : <span className="cart-btn__counter cart-btn__counter-small">99+</span>}
+              </>
+            )
+            : null}
+
         </button>
 
       </div>

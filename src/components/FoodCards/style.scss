@@ -5,7 +5,6 @@
   .wrapper{
     max-width: 1440px;  
     margin: 0 auto;
-    padding-top: 30px;
   }
 
   h3{
@@ -14,6 +13,8 @@
     padding-left: 20px;
     color: #fff;
     text-transform: uppercase;
+    display: block;
+    margin-left: 20px;
   }
 
   .swiper-container{
@@ -29,18 +30,21 @@
   }
 }
 
-
-
 @media screen and (min-width: 319px) {
   .swiper-container {
-    width: 340px;
+    width: 360px;
   }
 }
 
-
 @media screen and (min-width: 768px) {
   .swiper-container {
-    width: 768px;
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .swiper-container {
+    width: 1120px;
   }
 }
 

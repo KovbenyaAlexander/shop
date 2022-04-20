@@ -27,9 +27,10 @@ const FoodCards = (): JSX.Element => {
             },
 
             768: {
-              slidesPerView: 2,
-              width: 650,
+              slidesPerView: 3,
+              width: 1050,
             },
+
             1440: {
               slidesPerView: 4.2,
               width: 1440,
@@ -63,9 +64,10 @@ const FoodCards = (): JSX.Element => {
             },
 
             768: {
-              slidesPerView: 2,
-              width: 650,
+              slidesPerView: 3,
+              width: 1050,
             },
+
             1440: {
               slidesPerView: 4.2,
               width: 1440,
@@ -95,9 +97,10 @@ const FoodCards = (): JSX.Element => {
             },
 
             768: {
-              slidesPerView: 2,
-              width: 650,
+              slidesPerView: 3,
+              width: 1050,
             },
+
             1440: {
               slidesPerView: 4.2,
               width: 1440,

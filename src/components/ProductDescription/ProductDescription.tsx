@@ -17,11 +17,11 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
   const allCards = (Object.values(foodCards)).flat();
   const card = allCards.find((item: IFoodCard) => item.id === id);
 
-  const addGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
+  const addGoodsHandler = () => {
     dispatch(adGoodsInCart(card.id));
   };
 
-  const decreaseGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
+  const decreaseGoodsHandler = () => {
     dispatch(decreaseGoodsInCart(card.id));
   };
 

@@ -25,11 +25,12 @@
 
   &__link-to-main{
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
     text-decoration: none;
     cursor: pointer;
     color: #fff;
     transition: all .2s ease-in-out;
+    text-decoration: underline;
 
     &:hover{
       color: #79B382;

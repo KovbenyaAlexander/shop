@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -96,7 +94,11 @@ const Cart = (): JSX.Element => {
                             <FontAwesomeIcon icon={faPlus} />
                           </button>
                         </span>
-                        <p>{item.price}</p>
+                        <p>
+                          {item.price}
+                          &#x20bd;
+                        </p>
+
                       </div>
                     );
                   }
@@ -113,11 +115,11 @@ const Cart = (): JSX.Element => {
           </div>
           {finalCost < 1499
             ? (
-              <button disabled type="button" className="cart-total__btn"> go</button>
+              <button disabled type="button" className="cart-total__btn">go</button>
             )
             : (
               <NavLink to="./order">
-                <button className="cart-total__btn cart-total__btn-active" type="button"> go</button>
+                <button className="cart-total__btn cart-total__btn-active" type="button">go</button>
               </NavLink>
             )}
         </div>

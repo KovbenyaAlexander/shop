@@ -31,11 +31,10 @@
     width: 150px;
     background-color: rgba(33, 31, 32, 1);
     color: #fff;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 30px;
     z-index: 1001;
-  }
 
+  }
 
   .wrapper{
     display: grid;
@@ -81,6 +80,10 @@
         height: 30px; 
         border-radius: 50%;
         line-height: 30px;
+        &-small{
+          font-size: 15px;
+          font-weight: bold;
+        }
       }
       &:hover{
         background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
