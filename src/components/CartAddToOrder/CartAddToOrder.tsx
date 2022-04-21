@@ -1,0 +1,55 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IFoodCard, IStore } from '../../types';
+import { adGoodsInCart } from '../../store/actions';
+import './style.scss';
+
+const CartAddToOrder = (): JSX.Element => {
+  const foodCards = useSelector((state: IStore) => state.foodCards);
+  const allCards = (Object.values(foodCards)).flat();
+
+  const dispatch = useDispatch();
+
+  const incFoodHandler = (id: string) => {
+    dispatch(adGoodsInCart(id));
+  };
+
+  return (
+    <div className="cart__add-goods">
+      <h2>добавить к заказу</h2>
+      <div className="cart__add-goods-wrapper">
+        {
+          allCards
+            .filter((item: IFoodCard) => item.numberOfPurchase === 0)
+            .map((item: IFoodCard, id: number) => {
+              if (item.numberOfPurchase === 0 && id < 4) {
+                return (
+                  <div key={item.id} className="cart__add-goods-item">
+                    <img className="cart__add-goods-item-img" src={item.image} alt="img" />
+                    <p>{item.name}</p>
+                    <span>
+                      Добавить
+                      {' '}
+                      <button type="button" onClick={() => incFoodHandler(item.id)}>
+                        <FontAwesomeIcon icon={faPlus} />
+                      </button>
+                    </span>
+                    <p>
+                      {item.price}
+                      &#x20bd;
+                    </p>
+
+                  </div>
+                );
+              }
+              return null;
+            })
+        }
+      </div>
+    </div>
+  );
+};
+
+export default CartAddToOrder;
