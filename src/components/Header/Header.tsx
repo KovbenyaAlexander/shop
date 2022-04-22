@@ -56,7 +56,7 @@ const Header = (): JSX.Element => {
         </div>
 
         <button type="button" className="cart-btn" onClick={onCartClickHandler}>
-          Корзина
+          <span className="cart-btn-text">Корзина</span>
 
           {orderSize > 0
             ? (

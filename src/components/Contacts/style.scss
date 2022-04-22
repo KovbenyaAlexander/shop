@@ -1,6 +1,5 @@
 .contacts{
   width: 100%;
-  font-family: 'Montserrat Alternates', sans-serif;
   color: #fff;
   margin-top: -120px;
   background: rgba(33, 31, 32, 1);
@@ -13,7 +12,7 @@
     background: url('../../../public/contacts-bg_.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right;
+    background-position: center;
 
     -webkit-box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
     -moz-box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.55);
@@ -91,5 +90,51 @@
 
   &__icon{
     color: #618967;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .contacts{
+    .wrapper{
+      background-position: right;
+      height: 1000px;
+      background-position-x: -728px;
+      background-position-y: 312px;
+      background-size: 1500px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container{
+      width: 95%;
+      box-sizing: border-box;
+      margin: 125px auto;
+    }
+
+    &__btn{
+      margin-right: 5px;
+    }
+  }
+}
+  
+
+@media screen and (max-width: 500px){
+  .contacts{
+    .wrapper{
+      background-position-x: -870px;
+      background-position-y: 312px;
+    }
+
+    .container{
+      p{
+        font-size: 15px;
+      }
+    }
+
+    &__btn{
+      font-size: 10px;
+    }
+
+
   }
 }

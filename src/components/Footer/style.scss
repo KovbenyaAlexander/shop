@@ -118,3 +118,15 @@
     }
   }
 }
+
+
+@media (max-width: 500px) {
+  .footer{
+    .wrapper{
+      padding: 15px;
+      grid-template-columns: 60px 1fr;
+      gap: 15px
+    }
+  }
+}
+  

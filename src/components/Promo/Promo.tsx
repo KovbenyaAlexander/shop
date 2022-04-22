@@ -5,7 +5,11 @@ const Promo = (): JSX.Element => (
   <section className="promo">
     <div className="wrapper">
       <div className="promo-text">
-        <p className="unselectable-text">Доставка вкуснейших блюд за 60 минут</p>
+        <p className="unselectable-text">
+          Доставка вкуснейших
+          <br />
+          блюд за 60 минут
+        </p>
       </div>
     </div>
 

@@ -3,14 +3,13 @@
   src: url('../../../public/fonts/Zing Rust Demo Base.ttf') format('truetype');
 }
 
-
 .promo{
   width: 100%;
   background: rgba(33, 31, 32, 1);
   margin-top: 99px;
 
   .promo-text{
-    width: 80%;
+    width: 70%;
     height: 484px;
 
     background: rgb(27,27,27);
@@ -37,3 +36,20 @@
     background-position: right;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .promo{
+    .promo-text{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        font-size: 50px;
+        width: 90%;
+        padding: 0;
+      }
+    }
+  }
+}
+  

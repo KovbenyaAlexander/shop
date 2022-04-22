@@ -205,7 +205,26 @@
 }
 
 
+@media screen and (max-width: 500px) {
+  .header{
+    .wrapper{
+      display: grid !important;
+      grid-template-columns: 200px 1fr 50px !important;
+      padding: 0 15px 0 0;
 
+      .cart-btn{
+        width: 100%;
+        .cart-btn-text{
+          display: none !important;
+        }
+
+      }
+    }
+
+
+  }
+
+}
 
 
 
