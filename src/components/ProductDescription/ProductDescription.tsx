@@ -35,7 +35,7 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
           вернуться назад
         </Link>
         <div className="card-description__content">
-          <img src={`../${card.image}`} alt="img" className="card-description__img" />
+          <img src={`./${card.image}`} alt="img" className="card-description__img" />
           <div className="card-description__content-text">
             <h2>{card.name}</h2>
             <p className="card-description__descr">{card.description}</p>
