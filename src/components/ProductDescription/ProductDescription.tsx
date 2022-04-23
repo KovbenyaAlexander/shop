@@ -99,7 +99,23 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
           slidesOffsetBefore={20}
           spaceBetween={30}
           slidesPerView={4.2}
-          className="card-description__swiper-container"
+          className="card-description__swiper-container swiper-container"
+          breakpoints={{
+            319: {
+              slidesPerView: 1,
+              width: 300,
+            },
+
+            768: {
+              slidesPerView: 3,
+              width: 1050,
+            },
+
+            1440: {
+              slidesPerView: 4.2,
+              width: 1440,
+            },
+          }}
         >
           {allCards
             .filter((item: IFoodCard) => item.id !== card.id)
