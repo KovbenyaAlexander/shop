@@ -54,8 +54,6 @@ const FoodCards = (): JSX.Element => {
         <Swiper
           slidesOffsetBefore={20}
           spaceBetween={30}
-          slidesPerView={4.2}
-          className="swiper-container"
           height={385}
           breakpoints={{
             319: {
@@ -73,6 +71,10 @@ const FoodCards = (): JSX.Element => {
               width: 1440,
             },
           }}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+          className="swiper-container"
+
         >
           {hotFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
@@ -87,8 +89,6 @@ const FoodCards = (): JSX.Element => {
         <Swiper
           slidesOffsetBefore={20}
           spaceBetween={30}
-          slidesPerView={4.2}
-          className="swiper-container"
           height={385}
           breakpoints={{
             319: {
@@ -106,6 +106,10 @@ const FoodCards = (): JSX.Element => {
               width: 1440,
             },
           }}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+          className="swiper-container"
+
         >
 
           {meetFod.map((item: IFoodCard) => (

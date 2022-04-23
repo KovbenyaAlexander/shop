@@ -55,3 +55,14 @@
 .cart__add-goods-item:last-child{
   border-right: none; 
 }
+
+@media screen and (max-width: 499px) {
+  .cart__add-goods-item{
+    &-add{
+      .cart__add-goods-item-text{
+        display: none;
+      }
+    }
+  }
+}
+  

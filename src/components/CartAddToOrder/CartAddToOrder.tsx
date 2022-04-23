@@ -29,13 +29,16 @@ const CartAddToOrder = (): JSX.Element => {
                   <div key={item.id} className="cart__add-goods-item">
                     <img className="cart__add-goods-item-img" src={item.image} alt="img" />
                     <p>{item.name}</p>
-                    <span>
-                      Добавить
-                      {' '}
+                    <div className="cart__add-goods-item-add">
+                      <span className="cart__add-goods-item-text">
+                        Добавить
+                        {' '}
+                      </span>
                       <button type="button" onClick={() => incFoodHandler(item.id)}>
                         <FontAwesomeIcon icon={faPlus} />
                       </button>
-                    </span>
+                    </div>
+
                     <p>
                       {item.price}
                       &#x20bd;
