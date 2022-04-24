@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import './style.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { IFoodCard, IFoodCards, IStore } from '../../types';
+import { IFoodCard, IStore } from '../../types';
 import FoodCard from '../FoodCard/FoodCard';
 import 'swiper/css';
 
