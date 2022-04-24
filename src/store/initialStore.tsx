@@ -25,7 +25,7 @@ export const initialStore: IStore = {
         id: '2',
         name: 'Индейка',
         description: 'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 200,
+        price: 2000,
         image: './food2.png',
         weight: '1000г',
         numberOfPurchase: 5,

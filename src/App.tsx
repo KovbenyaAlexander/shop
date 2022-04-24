@@ -2,16 +2,11 @@ import React from 'react';
 import './style.scss';
 import { Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import Promo from './components/Promo/Promo';
-import FoodCards from './components/FoodCards/FoodCards';
-import ProductDescription from './components/ProductDescription/ProductDescription';
-import About from './components/About/About';
-import Contacts from './components/Contacts/Contacts';
 import Footer from './components/Footer/Footer';
-
 import Cart from './Pages/Cart/Cart';
 import Main from './Pages/Main/Main';
 import FoodDescription from './Pages/FoodDescription/FoodDescription';
+import Order from './Pages/Order/Order';
 
 const App = (): JSX.Element => (
   <div className="app">
@@ -24,6 +19,10 @@ const App = (): JSX.Element => (
     <Route path="/cart" exact>
       <Cart />
       <Footer />
+    </Route>
+
+    <Route path="/order" exact>
+      <Order />
     </Route>
 
     <Route
