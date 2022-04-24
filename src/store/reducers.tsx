@@ -1,12 +1,9 @@
 import {
-  Actions, IStore, IUser, IFoodCard,
+  Actions, IStore, IFoodCard,
 } from '../types';
 import { initialStore } from './initialStore';
 
 export type AllActions =
-  { type: typeof Actions.INC } |
-  { type: typeof Actions.DEC } |
-  { type: typeof Actions.SET_DATA, payload: IUser[] } |
   { type: typeof Actions.ADDGOODSINCART, payload: string } |
   { type: typeof Actions.DECREASE_GOODSINCART, payload: string } |
   { type: typeof Actions.DELETE_FOOD_FROM_CART, payload: string } |
@@ -15,21 +12,6 @@ export type AllActions =
 
 export default function reducer(state: IStore = initialStore, action: AllActions): IStore {
   switch (action.type) {
-    case Actions.INC:
-      return {
-        ...state,
-        counter: state.counter + 1,
-      };
-    case Actions.DEC:
-      return {
-        ...state,
-        counter: state.counter - 1,
-      };
-    case Actions.SET_DATA:
-      return {
-        ...state,
-        dataFromApi: action.payload,
-      };
     case Actions.ADDGOODSINCART:
       return {
         ...state,

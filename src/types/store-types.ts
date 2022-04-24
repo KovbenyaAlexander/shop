@@ -1,6 +1,4 @@
 export interface IStore {
-  counter: number
-  dataFromApi: IUser[]
   foodCards: IFoodCards
   orderSize: number
   isModalOpen: boolean
@@ -25,8 +23,4 @@ export interface IFoodCard {
   carbohydrates: number
   calories: number
   inCart: boolean
-}
-export interface IUser{
-  title: string;
-  id: number
 }
