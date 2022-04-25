@@ -1,7 +1,8 @@
 .order{
   margin-top: 99px;
   background: rgba(33, 31, 32, 1);
-  
+  width: 100%;
+
   &__validation-err{
     border: 1px solid rgba(255, 0, 0, .4) !important;
   }
@@ -36,7 +37,6 @@
   &__contacts{
     width: 90%;
     margin: 0 auto;
-    min-width: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 60px;
@@ -70,8 +70,6 @@
     &-checkbox{
       display: flex;
       justify-content: space-between;
-      min-width: 400px;
-
       gap: 20px;
 
       input{
@@ -159,10 +157,8 @@
     padding: 30px;
     margin-top: 30px;
     &-checkbox{
-      display: flex;
-      justify-content: space-between;
-      min-width: 400px;
-
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
 
       input{
@@ -205,7 +201,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      min-width: 400px;
       gap: 20px;
 
       label{
@@ -259,7 +254,7 @@
     }
   }
 
-  &__argeement{
+  &__agreement{
     width: 90%;
     margin: 0 auto;
     background: linear-gradient(90deg, #353333 0%, #383636 100%);
@@ -282,4 +277,79 @@
       border: 2px solid rgba(255, 0, 0, 0.4);
     }
   }
+}
+
+
+@media screen and (max-width: 768px){
+  .order{
+    .wrapper{
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    &__contacts{
+      padding: 5px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 30px 60px 60px;
+    }
+
+    h3{
+      grid-row: 1/1;
+      grid-column: 1/2;
+    }
+
+    &__delivery{
+      padding: 5px;
+      &-adress{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid-gap: 20px;
+      }
+  
+      &-street{
+        grid-row: 1/1;
+        grid-column: 1/1;
+      }
+  
+      &-comment{
+        grid-row: 6/7;
+        grid-column: 1/1;
+      }
+    }
+
+    &__payment{
+      padding: 5px;
+      &-checkbox{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px;
+      }
+    }
+
+    &__delivery-time{
+      padding: 5px;
+      &-checkbox{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 0px;
+      }
+
+      p{
+        grid-row: 3/4;
+        grid-column: 1/2;
+      }
+    }
+
+    &__agreement{
+      padding: 5px;
+      grid-template-columns: 25px 1fr;
+      grid-template-rows: 1fr 1fr;
+      button{
+        grid-row: 2/3;
+        grid-column: 1/3;
+      }
+    }
+  }
+
 }

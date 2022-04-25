@@ -52,10 +52,8 @@ const OrderDetails = (): JSX.Element => {
       <div className="wrapper">
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
           <div className={(errors.name || errors.phone) ? 'order__contacts order__contacts-error' : 'order__contacts'}>
             <h3>Контактная информация</h3>
-
             <label htmlFor="name">
               <input
                 className={errors.name ? 'order__validation-err' : ''}
@@ -78,9 +76,7 @@ const OrderDetails = (): JSX.Element => {
           </div>
 
           <div className="order__delivery">
-
             <div className="order__delivery-checkbox">
-
               <label htmlFor="delivery" className={deliveryType === 'delivery' ? 'order__radio-checked' : ''}>
                 Доставка
                 <input
@@ -115,14 +111,12 @@ const OrderDetails = (): JSX.Element => {
                 <h3>Адрес доставки</h3>
                 <div className="order__delivery-adress">
                   <input
-                    // className={errors.street ? 'order-validation-err order-delivery-street' : 'order-delivery-street'}
                     id="street"
                     type="text"
                     placeholder="Улица"
                     {...register('street')}
                   />
                   <input
-                    // className={errors.houseNumber ? 'order-validation-err order-delivery-house-number' : 'order-delivery-house-number'}
                     id="houseNumber"
                     type="text"
                     placeholder="№ дома"
@@ -178,7 +172,7 @@ const OrderDetails = (): JSX.Element => {
             <h3>Способ оплаты</h3>
 
             <div className="order__payment-checkbox">
-              <label htmlFor="online" className={paymentType === 'online' ? 'order-radio-checked' : ''}>
+              <label htmlFor="online" className={paymentType === 'online' ? 'order__radio-checked' : ''}>
                 Оплата онлайн
                 <input
                   {...register('typeOfPayment')}
@@ -256,15 +250,11 @@ const OrderDetails = (): JSX.Element => {
                 </div>
               )
                 : <p>Доставим через 40 минут</p>}
-
             </div>
-
           </div>
 
-          <div className={errors.agreement ? 'order__argeement-error order__argeement ' : 'order__argeement'}>
-
+          <div className={errors.agreement ? 'order__agreement-error order__agreement ' : 'order__agreement'}>
             <input {...register('agreement')} type="checkbox" />
-
             <span>Я согласен на обработку моих перс. данных в соответствии с Условиями</span>
             <button type="submit">Оформить заказ</button>
           </div>
