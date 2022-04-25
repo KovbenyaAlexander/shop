@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import * as yup from 'yup';
+
 import './style.scss';
 
 type FormValues = {
@@ -17,11 +21,22 @@ type FormValues = {
   street: string;
   typeOfDelivery: string;
   typeOfPayment: string;
+  agreement: boolean;
 };
 
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  phone: yup.string().required(),
+  agreement: yup.boolean().isTrue().required(),
+}).required();
+
 const OrderDetails = (): JSX.Element => {
-  const { register, handleSubmit } = useForm<FormValues>();
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
+    resolver: yupResolver(schema),
+  });
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    alert(JSON.stringify(data));
+  };
 
   const [deliveryType, setDeliveryType] = useState('delivery');
   const onChangeDeliveryHandler = (e:React.ChangeEvent<HTMLInputElement>) => setDeliveryType(e.target.value);
@@ -38,27 +53,35 @@ const OrderDetails = (): JSX.Element => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
 
-          <div className="order-contacts">
+          <div className={(errors.name || errors.phone) ? 'order__contacts order__contacts-error' : 'order__contacts'}>
+            <h3>Контактная информация</h3>
 
-            <div className="order-contacts-container">
-              <h3>Контактная информация</h3>
+            <label htmlFor="name">
+              <input
+                className={errors.name ? 'order__validation-err' : ''}
+                id="name"
+                type="text"
+                placeholder="Имя*"
+                {...register('name')}
+              />
+            </label>
 
-              <label htmlFor="name">
-                <input id="name" type="text" placeholder="Имя*" {...register('name')} />
-              </label>
-
-              <label htmlFor="phone">
-                <input id="phone" type="text" placeholder="Телефон*" {...register('phone')} />
-              </label>
-            </div>
-
+            <label htmlFor="phone">
+              <input
+                className={errors.phone ? 'order__validation-err' : ''}
+                id="phone"
+                type="text"
+                placeholder="Телефон*"
+                {...register('phone')}
+              />
+            </label>
           </div>
 
-          <div className="order-delivery">
+          <div className="order__delivery">
 
-            <div className="order-delivery-checkbox">
+            <div className="order__delivery-checkbox">
 
-              <label htmlFor="delivery" className={deliveryType === 'delivery' ? 'order-radio-checked' : ''}>
+              <label htmlFor="delivery" className={deliveryType === 'delivery' ? 'order__radio-checked' : ''}>
                 Доставка
                 <input
                   {...register('typeOfDelivery')}
@@ -72,7 +95,7 @@ const OrderDetails = (): JSX.Element => {
                 />
               </label>
 
-              <label htmlFor="pickup" className={deliveryType === 'pickup' ? 'order-radio-checked' : ''}>
+              <label htmlFor="pickup" className={deliveryType === 'pickup' ? 'order__radio-checked' : ''}>
                 Самовывоз
                 <input
                   {...register('typeOfDelivery')}
@@ -90,26 +113,60 @@ const OrderDetails = (): JSX.Element => {
             {deliveryType === 'delivery' && (
               <>
                 <h3>Адрес доставки</h3>
-                <div className="order-delivery-adress">
-                  <input className="order-delivery-street" id="street" type="text" placeholder="Улица*" {...register('street')} />
-                  <input className="order-delivery-houseNumber" id="houseNumber" type="text" placeholder="№ дома*" {...register('houseNumber')} />
-                  <input className="order-delivery-officeNumber" id="officeNumber" type="text" placeholder="№ квартиры/офиса" {...register('officeNumber')} />
-                  <input className="order-delivery-entrance" id="entrance" type="text" placeholder="Подъезд" {...register('entrance')} />
-                  <input className="order-delivery-floor" id="floor" type="text" placeholder="Этаж" {...register('floor')} />
-                  <input className="order-delivery-comment" id="comment" type="text" placeholder="Комментарий" {...register('comment')} />
+                <div className="order__delivery-adress">
+                  <input
+                    // className={errors.street ? 'order-validation-err order-delivery-street' : 'order-delivery-street'}
+                    id="street"
+                    type="text"
+                    placeholder="Улица"
+                    {...register('street')}
+                  />
+                  <input
+                    // className={errors.houseNumber ? 'order-validation-err order-delivery-house-number' : 'order-delivery-house-number'}
+                    id="houseNumber"
+                    type="text"
+                    placeholder="№ дома"
+                    {...register('houseNumber')}
+                  />
+                  <input
+                    className="order__delivery-officeNumber"
+                    id="officeNumber"
+                    type="text"
+                    placeholder="№ квартиры/офиса"
+                    {...register('officeNumber')}
+                  />
+                  <input
+                    className="order__delivery-entrance"
+                    id="entrance"
+                    type="text"
+                    placeholder="Подъезд"
+                    {...register('entrance')}
+                  />
+                  <input
+                    className="order__delivery-floor"
+                    id="floor"
+                    type="text"
+                    placeholder="Этаж"
+                    {...register('floor')}
+                  />
+                  <input
+                    className="order__delivery-comment"
+                    id="comment"
+                    type="text"
+                    placeholder="Комментарий"
+                    {...register('comment')}
+                  />
                 </div>
               </>
             )}
 
             {deliveryType === 'pickup' && (
-              <div className="order-delivery-pickup">
+              <div className="order__delivery-pickup">
                 <h3>Выберите адрес самовывоза</h3>
 
-                <select
-                  required
-                  {...register('pickupAdress')}
-
-                >
+                <select {...register('pickupAdress')}>
+                  <option value="г. Киев, ул. Космонавтов, д. 7, офис 5">г. Киев, ул. Космонавтов, д. 7, офис 5</option>
+                  <option value="г. Киев, ул. Космонавтов, д. 7, офис 5">г. Киев, ул. Космонавтов, д. 7, офис 5</option>
                   <option value="г. Киев, ул. Космонавтов, д. 7, офис 5">г. Киев, ул. Космонавтов, д. 7, офис 5</option>
                   <option value="г. Киев, ул. Космонавтов, д. 7, офис 5">г. Киев, ул. Космонавтов, д. 7, офис 5</option>
                 </select>
@@ -117,10 +174,10 @@ const OrderDetails = (): JSX.Element => {
             )}
           </div>
 
-          <div className="order-payment">
+          <div className="order__payment">
             <h3>Способ оплаты</h3>
 
-            <div className="order-payment-checkbox">
+            <div className="order__payment-checkbox">
               <label htmlFor="online" className={paymentType === 'online' ? 'order-radio-checked' : ''}>
                 Оплата онлайн
                 <input
@@ -133,7 +190,7 @@ const OrderDetails = (): JSX.Element => {
                 />
               </label>
 
-              <label htmlFor="credit-card" className={paymentType === 'credit-card' ? 'order-radio-checked' : ''}>
+              <label htmlFor="credit-card" className={paymentType === 'credit-card' ? 'order__radio-checked' : ''}>
                 Курьеру картой
                 <input
                   {...register('typeOfPayment')}
@@ -145,7 +202,7 @@ const OrderDetails = (): JSX.Element => {
                 />
               </label>
 
-              <label htmlFor="cash" className={paymentType === 'cash' ? 'order-radio-checked' : ''}>
+              <label htmlFor="cash" className={paymentType === 'cash' ? 'order__radio-checked' : ''}>
                 Наличными
                 <input
                   {...register('typeOfPayment')}
@@ -159,12 +216,12 @@ const OrderDetails = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="order-delivery-time">
+          <div className="order__delivery-time">
             <h3>Когда доставить</h3>
 
-            <div className="order-delivery-time-checkbox">
+            <div className="order__delivery-time-checkbox">
 
-              <label htmlFor="asap" className={deliveryTime === 'asap' ? 'order-radio-checked' : ''}>
+              <label htmlFor="asap" className={deliveryTime === 'asap' ? 'order__radio-checked' : ''}>
                 В ближайшее время
                 <input
                   {...register('orderTime')}
@@ -177,7 +234,7 @@ const OrderDetails = (): JSX.Element => {
                 />
               </label>
 
-              <label htmlFor="customTime" className={deliveryTime === 'customTime' ? 'order-radio-checked' : ''}>
+              <label htmlFor="customTime" className={deliveryTime === 'customTime' ? 'order__radio-checked' : ''}>
                 Ко времени
                 <input
                   {...register('orderTime')}
@@ -190,7 +247,7 @@ const OrderDetails = (): JSX.Element => {
               </label>
 
               {deliveryTime === 'customTime' ? (
-                <div className="order-time-custom">
+                <div className="order__time-custom">
                   <input
                     id="customTime"
                     type="datetime-local"
@@ -204,9 +261,9 @@ const OrderDetails = (): JSX.Element => {
 
           </div>
 
-          <div className="order-argeement">
+          <div className={errors.agreement ? 'order__argeement-error order__argeement ' : 'order__argeement'}>
 
-            <input className="order-argeement-checkbox" type="checkbox" />
+            <input {...register('agreement')} type="checkbox" />
 
             <span>Я согласен на обработку моих перс. данных в соответствии с Условиями</span>
             <button type="submit">Оформить заказ</button>
