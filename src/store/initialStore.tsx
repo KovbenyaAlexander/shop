@@ -1,7 +1,7 @@
 import { IStore } from '../types/store-types';
 
 export const initialStore: IStore = {
-  orderSize: 7,
+  orderSize: 11,
   isModalOpen: false,
   foodCards: {
     cold: [
@@ -12,7 +12,7 @@ export const initialStore: IStore = {
         price: 100,
         image: './food1.png',
         weight: '100г',
-        numberOfPurchase: 1,
+        numberOfPurchase: 10,
         protein: 125,
         fat: 564,
         carbohydrates: 458,
@@ -26,12 +26,12 @@ export const initialStore: IStore = {
         price: 2000,
         image: './food2.png',
         weight: '1000г',
-        numberOfPurchase: 5,
+        numberOfPurchase: 0,
         protein: 675,
         fat: 852,
         carbohydrates: 245,
         calories: 257,
-        inCart: true,
+        inCart: false,
       },
       {
         id: '3',

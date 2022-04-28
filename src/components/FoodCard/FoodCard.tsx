@@ -35,7 +35,7 @@ const FoodCard = ({ cardInfo } : { cardInfo: IFoodCard }): JSX.Element => {
 
   return (
 
-    <div className="card" onClick={onCardClickHandler}>
+    <div className="card unselectable" onClick={onCardClickHandler}>
 
       {cardInfo.numberOfPurchase > 0
         ? (

@@ -35,17 +35,19 @@ const OrderDetails = (): JSX.Element => {
     resolver: yupResolver(schema),
   });
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    alert(JSON.stringify(data));
+    alert(JSON.stringify(data, null, 2));
   };
 
   const [deliveryType, setDeliveryType] = useState('delivery');
-  const onChangeDeliveryHandler = (e:React.ChangeEvent<HTMLInputElement>) => setDeliveryType(e.target.value);
+  const onChangeDeliveryHandler = (e: any) => setDeliveryType(e.target.value);
 
   const [paymentType, setPaymentType] = useState('cash');
-  const onChangePaymentHandler = (e: React.ChangeEvent<HTMLInputElement>) => setPaymentType(e.target.value);
+  const onChangePaymentHandler = (e: any) => {
+    setPaymentType(e.target.value);
+  };
 
   const [deliveryTime, setDeliveryTime] = useState('asap');
-  const onChangeDeliveryTimeHandler = (e: React.ChangeEvent<HTMLInputElement>) => setDeliveryTime(e.target.value);
+  const onChangeDeliveryTimeHandler = (e: any) => setDeliveryTime(e.target.value);
 
   return (
     <section className="order">
@@ -77,18 +79,18 @@ const OrderDetails = (): JSX.Element => {
 
           <div className="order__delivery">
             <div className="order__delivery-checkbox">
-              <label htmlFor="delivery" className={deliveryType === 'delivery' ? 'order__radio-checked' : ''}>
+              <label htmlFor="delivery" className={paymentType === 'delivery' ? 'order__radio-checked' : ''}>
                 Доставка
                 <input
                   {...register('typeOfDelivery')}
-                  id="delivery"
-                  name="typeOfDelivery"
                   type="radio"
+                  name="typeOfDelivery"
                   value="delivery"
-                  onChange={onChangeDeliveryHandler}
+                  id="delivery"
+                  onClick={onChangeDeliveryHandler}
                   checked={deliveryType === 'delivery'}
-
                 />
+
               </label>
 
               <label htmlFor="pickup" className={deliveryType === 'pickup' ? 'order__radio-checked' : ''}>
@@ -99,8 +101,7 @@ const OrderDetails = (): JSX.Element => {
                   name="typeOfDelivery"
                   type="radio"
                   value="pickup"
-                  onChange={onChangeDeliveryHandler}
-
+                  onClick={onChangeDeliveryHandler}
                 />
               </label>
 
@@ -173,40 +174,40 @@ const OrderDetails = (): JSX.Element => {
 
             <div className="order__payment-checkbox">
               <label htmlFor="online" className={paymentType === 'online' ? 'order__radio-checked' : ''}>
-                Оплата онлайн
                 <input
                   {...register('typeOfPayment')}
-                  id="online"
-                  name="typeOfPayment"
                   type="radio"
+                  name="typeOfPayment"
                   value="online"
-                  onChange={onChangePaymentHandler}
+                  id="online"
+                  onClick={onChangePaymentHandler}
                 />
+                Онлайн
               </label>
-
-              <label htmlFor="credit-card" className={paymentType === 'credit-card' ? 'order__radio-checked' : ''}>
+              <label htmlFor="creditСard" className={paymentType === 'creditСard' ? 'order__radio-checked' : ''}>
+                <input
+                  {...register('typeOfPayment')}
+                  type="radio"
+                  name="typeOfPayment"
+                  value="creditСard"
+                  id="creditСard"
+                  onClick={onChangePaymentHandler}
+                />
                 Курьеру картой
+              </label>
+              <label htmlFor="cash" className={paymentType === 'cash' ? 'order__radio-checked' : ''}>
                 <input
                   {...register('typeOfPayment')}
-                  id="credit-card"
-                  name="typeOfPayment"
                   type="radio"
-                  value="credit-card"
-                  onChange={onChangePaymentHandler}
+                  name="typeOfPayment"
+                  value="cash"
+                  id="cash"
+                  checked={paymentType === 'cash'}
+                  onClick={onChangePaymentHandler}
                 />
+                Наличными
               </label>
 
-              <label htmlFor="cash" className={paymentType === 'cash' ? 'order__radio-checked' : ''}>
-                Наличными
-                <input
-                  {...register('typeOfPayment')}
-                  id="cash"
-                  name="typeOfPayment"
-                  type="radio"
-                  value="cash"
-                  onChange={onChangePaymentHandler}
-                />
-              </label>
             </div>
           </div>
 
@@ -223,7 +224,7 @@ const OrderDetails = (): JSX.Element => {
                   name="orderTime"
                   type="radio"
                   value="asap"
-                  onChange={onChangeDeliveryTimeHandler}
+                  onClick={onChangeDeliveryTimeHandler}
                   checked={deliveryTime === 'asap'}
                 />
               </label>
@@ -236,7 +237,7 @@ const OrderDetails = (): JSX.Element => {
                   name="orderTime"
                   type="radio"
                   value="customTime"
-                  onChange={onChangeDeliveryTimeHandler}
+                  onClick={onChangeDeliveryTimeHandler}
                 />
               </label>
 

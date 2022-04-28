@@ -11,17 +11,39 @@
   margin-top: 50px;
   box-sizing: border-box;
   padding: 30px;
+
   &__btn{
-    width: 209px;
+    max-width: 209px;
     height: 50px;
     border-radius: 10px;
     color: #fff;
     font-size: 20px;
     border: none;
     cursor: pointer;
+    padding: 5px;
+  }
+
+  span{
+    font-size: 20px;
+    font-weight: bold;
   }
 
   &__btn-active{
     background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+  }
+
+  &__error-msg{
+    font-size: 16px;
+    color: rgb(216, 109, 109);
+    font-weight: 900;
+    margin-top: 20px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px){
+  .cart-total{
+    padding: 10px
   }
 }

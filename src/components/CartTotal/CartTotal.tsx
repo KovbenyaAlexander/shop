@@ -13,17 +13,18 @@ const CartTotal = (): JSX.Element => {
   return (
     <div className="cart-total">
       <div>
-        <span>Итого:</span>
+        <span>Итого: </span>
         <span>{finalCost}</span>
-        {finalCost < 1499 ? <p className="cart__error-msg">Минимальная сума заказа 1500&#x20bd;</p> : null}
+        {finalCost < 1499 ? <p className="cart-total__error-msg">Минимальная сума заказа 1500&#x20bd;</p> : null}
       </div>
+
       {finalCost < 1499
         ? (
-          <button disabled type="button" className="cart-total__btn">go</button>
+          <button disabled type="button" className="cart-total__btn">Оформить заказ</button>
         )
         : (
           <NavLink to="./order">
-            <button className="cart-total__btn cart-total__btn-active" type="button">go</button>
+            <button className="cart-total__btn cart-total__btn-active" type="button">Оформить заказ</button>
           </NavLink>
         )}
     </div>

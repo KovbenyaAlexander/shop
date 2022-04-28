@@ -5,7 +5,7 @@ const Promo = (): JSX.Element => (
   <section className="promo">
     <div className="wrapper">
       <div className="promo-text">
-        <p className="unselectable-text">
+        <p className="unselectable">
           Доставка вкуснейших
           <br />
           блюд за 60 минут
