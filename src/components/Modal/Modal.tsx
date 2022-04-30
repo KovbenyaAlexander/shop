@@ -1,12 +1,13 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "./style.scss";
+import { useSelector } from "react-redux";
+import { IFoodCard, IStore } from "../../types";
 
 interface Props {
   isModalOpen: boolean;
   setIsModalOpen: any;
-  content?: {
+  userInfo?: {
     comment: string;
     customTime: string;
     entrance: string;
@@ -39,10 +40,26 @@ const style = {
 const ModalWindow = ({
   setIsModalOpen,
   isModalOpen,
-  content,
+  userInfo,
 }: Props): JSX.Element => {
   const handleClose = () => setIsModalOpen(false);
-  const entries = Object.entries(content || {});
+
+  const foodCards = useSelector((state: IStore) => state.foodCards);
+  const allCards = Object.values(foodCards).flat();
+  const foodInCart = allCards.filter((card: IFoodCard) => card.inCart);
+
+  const buyList = foodInCart.map((card: IFoodCard) => ({
+    productId: card.id,
+    name: card.name,
+    price: card.price,
+  }));
+
+  const dataToSend = {
+    userInfo,
+    buyList: buyList,
+  };
+
+  const dataToSendJSON = JSON.stringify(dataToSend, null, 2);
 
   return (
     <Modal
@@ -52,20 +69,7 @@ const ModalWindow = ({
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        {entries.map(([key, value]) => (
-          <>
-            <Typography
-              id="modal-modal-title"
-              variant="h6"
-              component="h2"
-              className="modal__str"
-            >
-              <span>{key}</span>
-              <span>{value}</span>
-            </Typography>
-            <hr className="modal__hr" />
-          </>
-        ))}
+        <pre>{dataToSendJSON}</pre>
       </Box>
     </Modal>
   );

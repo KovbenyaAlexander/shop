@@ -330,7 +330,7 @@ const OrderDetails = (): JSX.Element => {
       <ModalWindow
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
-        content={modalContent}
+        userInfo={modalContent}
       />
     </section>
   );
