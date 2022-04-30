@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ModalWindow from "../Modal/Modal";
 
 import * as yup from "yup";
 
@@ -40,8 +41,12 @@ const OrderDetails = (): JSX.Element => {
   } = useForm<FormValues>({
     resolver: yupResolver(schema),
   });
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    alert(JSON.stringify(data, null, 2));
+  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
+    // alert(JSON.stringify(data, null, 2));
+    // console.log(data);
+    setModalContent(data);
+    console.log(data);
+    setIsModalOpen(true);
   };
 
   const [deliveryType, setDeliveryType] = useState("delivery");
@@ -55,6 +60,9 @@ const OrderDetails = (): JSX.Element => {
   const [deliveryTime, setDeliveryTime] = useState("asap");
   const onChangeDeliveryTimeHandler = (e: any) =>
     setDeliveryTime(e.target.value);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<FormValues>();
 
   return (
     <section className="order">
@@ -320,6 +328,12 @@ const OrderDetails = (): JSX.Element => {
           </div>
         </form>
       </div>
+
+      <ModalWindow
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        content={modalContent}
+      />
     </section>
   );
 };
