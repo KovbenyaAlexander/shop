@@ -42,8 +42,6 @@ const OrderDetails = (): JSX.Element => {
     resolver: yupResolver(schema),
   });
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-    // alert(JSON.stringify(data, null, 2));
-    // console.log(data);
     setModalContent(data);
     console.log(data);
     setIsModalOpen(true);
@@ -102,16 +100,16 @@ const OrderDetails = (): JSX.Element => {
               <label
                 htmlFor="delivery"
                 className={
-                  paymentType === "delivery" ? "order__radio-checked" : ""
+                  deliveryType === "delivery" ? "order__radio-checked" : ""
                 }
               >
                 Доставка
                 <input
                   {...register("typeOfDelivery")}
-                  type="radio"
-                  name="typeOfDelivery"
-                  value="delivery"
                   id="delivery"
+                  name="typeOfDelivery"
+                  type="radio"
+                  value="delivery"
                   onClick={onChangeDeliveryHandler}
                   checked={deliveryType === "delivery"}
                 />
