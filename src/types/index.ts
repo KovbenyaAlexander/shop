@@ -1,2 +1,2 @@
-export * from './store-types';
-export * from './actions-types';
+export * from "./store-types";
+export * from "./actions-types";

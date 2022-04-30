@@ -1,16 +1,17 @@
-import {
-  Actions, IStore, IFoodCard,
-} from '../types';
-import { initialStore } from './initialStore';
+import { Actions, IStore, IFoodCard } from "../types";
+import { initialStore } from "./initialStore";
 
 export type AllActions =
-  { type: typeof Actions.ADDGOODSINCART, payload: string } |
-  { type: typeof Actions.DECREASE_GOODSINCART, payload: string } |
-  { type: typeof Actions.DELETE_FOOD_FROM_CART, payload: string } |
-  { type: typeof Actions.TOGGLE_MODAL } |
-  { type: typeof Actions.CLOSE_MODAL };
+  | { type: typeof Actions.ADDGOODSINCART; payload: string }
+  | { type: typeof Actions.DECREASE_GOODSINCART; payload: string }
+  | { type: typeof Actions.DELETE_FOOD_FROM_CART; payload: string }
+  | { type: typeof Actions.TOGGLE_MODAL }
+  | { type: typeof Actions.CLOSE_MODAL };
 
-export default function reducer(state: IStore = initialStore, action: AllActions): IStore {
+export default function reducer(
+  state: IStore = initialStore,
+  action: AllActions
+): IStore {
   switch (action.type) {
     case Actions.ADDGOODSINCART:
       return {

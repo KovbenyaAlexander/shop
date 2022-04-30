@@ -1,12 +1,12 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { toggleModal, closeModal } from '../../store/actions';
-import { IStore } from '../../types';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toggleModal, closeModal } from "../../store/actions";
+import { IStore } from "../../types";
 
-import './style.scss';
+import "./style.scss";
 
 const Header = (): JSX.Element => {
   const orderSize = useSelector((state: IStore) => state.orderSize);
@@ -15,12 +15,12 @@ const Header = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const onCartClickHandler = () => {
-    history.push('/cart');
+    history.push("/cart");
     dispatch(closeModal());
   };
 
   const onClickLogoHandler = () => {
-    history.push('/');
+    history.push("/");
     dispatch(closeModal());
   };
 
@@ -31,20 +31,26 @@ const Header = (): JSX.Element => {
   return (
     <header className="header">
       <div className="wrapper">
-
         <div className="header__logo-container">
           <button
             type="button"
             className={
-              isModalOpen ? 'header__burger header__burger-active' : 'header__burger'
+              isModalOpen
+                ? "header__burger header__burger-active"
+                : "header__burger"
             }
             onClick={onClickBurgerHandler}
           >
             <span />
           </button>
 
-          <button type="button" onClick={onClickLogoHandler} className="header__logo">LOGOS</button>
-
+          <button
+            type="button"
+            onClick={onClickLogoHandler}
+            className="header__logo"
+          >
+            LOGOS
+          </button>
         </div>
 
         <div className="header__contacts">
@@ -58,20 +64,19 @@ const Header = (): JSX.Element => {
         <button type="button" className="cart-btn" onClick={onCartClickHandler}>
           <span className="cart-btn-text">Корзина</span>
 
-          {orderSize > 0
-            ? (
-              <>
-                {orderSize < 100
-                  ? <span className="cart-btn__counter">{orderSize}</span>
-                  : <span className="cart-btn__counter cart-btn__counter-small">99+</span>}
-              </>
-            )
-            : null}
-
+          {orderSize > 0 ? (
+            <>
+              {orderSize < 100 ? (
+                <span className="cart-btn__counter">{orderSize}</span>
+              ) : (
+                <span className="cart-btn__counter cart-btn__counter-small">
+                  99+
+                </span>
+              )}
+            </>
+          ) : null}
         </button>
-
       </div>
-
     </header>
   );
 };
