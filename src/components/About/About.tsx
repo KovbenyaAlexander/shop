@@ -1,8 +1,8 @@
-import React from 'react';
-import Chef from '../SVG/ChefSVG';
-import Flash from '../SVG/FlashSVG';
-import Onion from '../SVG/OnionSVG';
-import './style.scss';
+import React from "react";
+import Chef from "../SVG/ChefSVG";
+import Flash from "../SVG/FlashSVG";
+import Onion from "../SVG/OnionSVG";
+import "./style.scss";
 
 const About = (): JSX.Element => (
   <section className="about">
@@ -11,15 +11,19 @@ const About = (): JSX.Element => (
         <div className="about-text">
           <h2>наше кафе</h2>
           <p>
-            Мы расположены в одном из самых живописных мест города — на берегу реки, это ваш оазис в черте города,
-            куда можно сбежать от шумного и пыльного мегаполиса.
-            Мы, действительно уникальные, ведь все продумано до мелочей: проект построен
-            из дикого закарпатского сруба, камин в основном зале ресторана и панорамные
-            окна с видом на реку, уютные беседки на берегу реки и лучшая видовая террасса,
-            шатер с посадкой на 200 человек, сказочный детский домик и бассейн.
+            Мы расположены в одном из самых живописных мест города — на берегу
+            реки, это ваш оазис в черте города, куда можно сбежать от шумного и
+            пыльного мегаполиса. Мы, действительно уникальные, ведь все
+            продумано до мелочей: проект построен из дикого закарпатского сруба,
+            камин в основном зале ресторана и панорамные окна с видом на реку,
+            уютные беседки на берегу реки и лучшая видовая террасса, шатер с
+            посадкой на 200 человек, сказочный детский домик и бассейн.
           </p>
 
-          <button className="about__btn" type="button"> посмотреть меню</button>
+          <button className="about__btn" type="button">
+            {" "}
+            посмотреть меню
+          </button>
         </div>
 
         <div className="about-cards">
@@ -43,7 +47,6 @@ const About = (): JSX.Element => (
       </div>
     </div>
   </section>
-
 );
 
 export default About;

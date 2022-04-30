@@ -1,20 +1,24 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowLeft, faMinus, faPlus, faCartPlus, faArrowLeftLong,
-} from '@fortawesome/free-solid-svg-icons';
-import { Switch, Route, Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { adGoodsInCart, decreaseGoodsInCart } from '../../store/actions';
-import { IFoodCard, IStore } from '../../types';
-import FoodCard from '../FoodCard/FoodCard';
-import './style.scss';
+  faArrowLeft,
+  faMinus,
+  faPlus,
+  faCartPlus,
+  faArrowLeftLong,
+} from "@fortawesome/free-solid-svg-icons";
+import { Switch, Route, Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { adGoodsInCart, decreaseGoodsInCart } from "../../store/actions";
+import { IFoodCard, IStore } from "../../types";
+import FoodCard from "../FoodCard/FoodCard";
+import "./style.scss";
 
 const ProductDescription = ({ id }: { id: string }): JSX.Element => {
   const dispatch = useDispatch();
   const foodCards = useSelector((state: IStore) => state.foodCards);
-  const allCards = (Object.values(foodCards)).flat();
+  const allCards = Object.values(foodCards).flat();
   const card = allCards.find((item: IFoodCard) => item.id === id);
 
   const addGoodsHandler = () => {
@@ -27,23 +31,20 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
 
   return (
     <div className="card-description">
-
       <div className="wrapper">
         <Link to="/" className="card-description__link-to-main">
-          <FontAwesomeIcon icon={faArrowLeftLong} />
-          {' '}
-          вернуться назад
+          <FontAwesomeIcon icon={faArrowLeftLong} /> вернуться назад
         </Link>
         <div className="card-description__content">
-          <img src={`./${card.image}`} alt="img" className="card-description__img" />
+          <img
+            src={`./${card.image}`}
+            alt="img"
+            className="card-description__img"
+          />
           <div className="card-description__content-text">
             <h2>{card.name}</h2>
             <p className="card-description__descr">{card.description}</p>
-            <p className="card-description__weight">
-              Масса:
-              {' '}
-              {card.weight}
-            </p>
+            <p className="card-description__weight">Масса: {card.weight}</p>
 
             <table className="card-description__table">
               <thead>
@@ -66,22 +67,30 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
 
             {card.numberOfPurchase > 0 ? (
               <div className="card-description__addGoodsinCart">
-                <button type="button" className="btn-minus" datatype="aa" onClick={decreaseGoodsHandler}>
+                <button
+                  type="button"
+                  className="btn-minus"
+                  datatype="aa"
+                  onClick={decreaseGoodsHandler}
+                >
                   <FontAwesomeIcon icon={faMinus} />
                 </button>
                 <p className="card-description__price">
                   {card.numberOfPurchase * card.price}
                   &#x20bd;
                 </p>
-                <button type="button" className="btn-plus" onClick={addGoodsHandler}>
+                <button
+                  type="button"
+                  className="btn-plus"
+                  onClick={addGoodsHandler}
+                >
                   <FontAwesomeIcon icon={faPlus} />
                 </button>
               </div>
             ) : (
               <div className="card-description__addGoodsinCart">
                 <button type="button" onClick={addGoodsHandler}>
-                  В корзину
-                  {' '}
+                  В корзину{" "}
                   <FontAwesomeIcon icon={faCartPlus} className="button__icon" />
                 </button>
                 <p className="card-description__price">
@@ -125,10 +134,8 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
               </SwiperSlide>
             ))}
         </Swiper>
-
       </div>
     </div>
-
   );
 };
 

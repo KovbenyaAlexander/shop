@@ -1,5 +1,5 @@
-import { Actions } from '../types';
-import { AllActions } from './reducers';
+import { Actions } from "../types";
+import { AllActions } from "./reducers";
 
 export function adGoodsInCart(payload: string): AllActions {
   return {

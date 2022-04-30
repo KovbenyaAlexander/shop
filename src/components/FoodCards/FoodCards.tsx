@@ -1,10 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import './style.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { IFoodCard, IStore } from '../../types';
-import FoodCard from '../FoodCard/FoodCard';
-import 'swiper/css';
+import React from "react";
+import { useSelector } from "react-redux";
+import "./style.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { IFoodCard, IStore } from "../../types";
+import FoodCard from "../FoodCard/FoodCard";
+import "swiper/css";
 
 const FoodCards = (): JSX.Element => {
   const coldFood = useSelector((state: IStore) => state.foodCards.cold);
@@ -14,7 +14,6 @@ const FoodCards = (): JSX.Element => {
   return (
     <section className="food">
       <div className="wrapper">
-
         <h3 className="unselectable">Холодные закуски</h3>
         <Swiper
           slidesOffsetBefore={20}
@@ -37,7 +36,6 @@ const FoodCards = (): JSX.Element => {
             },
           }}
           className="swiper-container"
-
         >
           {coldFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
@@ -70,7 +68,6 @@ const FoodCards = (): JSX.Element => {
             },
           }}
           className="swiper-container"
-
         >
           {hotFood.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
@@ -103,18 +100,14 @@ const FoodCards = (): JSX.Element => {
             },
           }}
           className="swiper-container"
-
         >
-
           {meetFod.map((item: IFoodCard) => (
             <SwiperSlide key={item.id}>
               <FoodCard cardInfo={item} />
             </SwiperSlide>
           ))}
         </Swiper>
-
       </div>
-
     </section>
   );
 };

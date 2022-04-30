@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './style.scss';
+import React, { useState } from "react";
+import "./style.scss";
 
 const Promo = (): JSX.Element => (
   <section className="promo">
@@ -12,7 +12,6 @@ const Promo = (): JSX.Element => (
         </p>
       </div>
     </div>
-
   </section>
 );
 
