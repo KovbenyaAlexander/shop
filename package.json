@@ -64,5 +64,5 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3"
   },
-  "homepage": "https://KovbenyaAlexander.github.io/shop"
+  "homepage": "."
 }
