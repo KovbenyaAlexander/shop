@@ -33,12 +33,10 @@ const FoodCard = ({ cardInfo }: { cardInfo: IFoodCard }): JSX.Element => {
 
   return (
     <div className="card unselectable" onClick={onCardClickHandler}>
-      {cardInfo.numberOfPurchase > 0 ? (
+      {cardInfo.numberOfPurchase > 0 && (
         <div className="card__counterOfPurchase">
           {cardInfo.numberOfPurchase}
         </div>
-      ) : (
-        <div className="card__img-wrapper" />
       )}
       <img className="card__img" src={cardInfo.image} alt="food" />
       <div className="card__header">
