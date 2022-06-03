@@ -90,4 +90,4 @@ const FoodCard = ({ cardInfo }: { cardInfo: IFoodCard }): JSX.Element => {
   );
 };
 
-export default FoodCard;
+export default React.memo(FoodCard);
