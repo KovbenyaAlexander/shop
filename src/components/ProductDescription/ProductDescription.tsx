@@ -2,13 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowLeft,
   faMinus,
   faPlus,
   faCartPlus,
   faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { adGoodsInCart, decreaseGoodsInCart } from "../../store/actions";
 import { IFoodCard, IStore } from "../../types";

@@ -11,6 +11,23 @@ const FoodCards = (): JSX.Element => {
   const hotFood = useSelector((state: IStore) => state.foodCards.hot);
   const meetFod = useSelector((state: IStore) => state.foodCards.meet);
 
+  const breakpoints = {
+    319: {
+      slidesPerView: 1,
+      width: 300,
+    },
+
+    768: {
+      slidesPerView: 3,
+      width: 1050,
+    },
+
+    1440: {
+      slidesPerView: 4.2,
+      width: 1440,
+    },
+  };
+
   return (
     <section className="food">
       <div className="wrapper">
@@ -19,22 +36,7 @@ const FoodCards = (): JSX.Element => {
           slidesOffsetBefore={20}
           spaceBetween={30}
           height={385}
-          breakpoints={{
-            319: {
-              slidesPerView: 1,
-              width: 300,
-            },
-
-            768: {
-              slidesPerView: 3,
-              width: 1050,
-            },
-
-            1440: {
-              slidesPerView: 4.2,
-              width: 1440,
-            },
-          }}
+          breakpoints={breakpoints}
           className="swiper-container"
         >
           {coldFood.map((item: IFoodCard) => (
@@ -51,22 +53,7 @@ const FoodCards = (): JSX.Element => {
           slidesOffsetBefore={20}
           spaceBetween={30}
           height={385}
-          breakpoints={{
-            319: {
-              slidesPerView: 1,
-              width: 300,
-            },
-
-            768: {
-              slidesPerView: 3,
-              width: 1050,
-            },
-
-            1440: {
-              slidesPerView: 4.2,
-              width: 1440,
-            },
-          }}
+          breakpoints={breakpoints}
           className="swiper-container"
         >
           {hotFood.map((item: IFoodCard) => (
@@ -83,22 +70,7 @@ const FoodCards = (): JSX.Element => {
           slidesOffsetBefore={20}
           spaceBetween={30}
           height={385}
-          breakpoints={{
-            319: {
-              slidesPerView: 1,
-              width: 300,
-            },
-
-            768: {
-              slidesPerView: 3,
-              width: 1050,
-            },
-
-            1440: {
-              slidesPerView: 4.2,
-              width: 1440,
-            },
-          }}
+          breakpoints={breakpoints}
           className="swiper-container"
         >
           {meetFod.map((item: IFoodCard) => (

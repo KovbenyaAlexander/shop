@@ -52,6 +52,7 @@ const ModalWindow = ({
     productId: card.id,
     name: card.name,
     price: card.price,
+    orderSize: card.numberOfPurchase,
   }));
 
   const dataToSend = {

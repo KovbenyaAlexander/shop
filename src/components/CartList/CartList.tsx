@@ -68,7 +68,7 @@ const CartList = (): JSX.Element => {
           ))}
         </>
       ) : (
-        <p className="ccart-list__empty-msg">Корзина пуста</p>
+        <p className="cart-list__empty-msg">Корзина пуста</p>
       )}
     </ul>
   );

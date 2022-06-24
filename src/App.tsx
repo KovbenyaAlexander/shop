@@ -2,7 +2,6 @@ import React from "react";
 import "./style.scss";
 import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Cart from "./Pages/Cart/Cart";
 import Main from "./Pages/Main/Main";
 import FoodDescription from "./Pages/FoodDescription/FoodDescription";

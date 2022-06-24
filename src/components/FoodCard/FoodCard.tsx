@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { IFoodCard } from "../../types";
 import { adGoodsInCart, decreaseGoodsInCart } from "../../store/actions";
 import "swiper/css";
@@ -52,7 +52,6 @@ const FoodCard = ({ cardInfo }: { cardInfo: IFoodCard }): JSX.Element => {
             type="button"
             data-isbtn="true"
             className="btn-minus"
-            datatype="aa"
             onClick={decreaseGoodsHandler}
           >
             <FontAwesomeIcon data-isbtn="true" icon={faMinus} />
