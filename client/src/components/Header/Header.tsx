@@ -1,31 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toggleModal, closeModal } from "../../store/actions";
+import { toggleBurger, closeBurger } from "../../store/actions";
+import RegistrationModal from "../RegistrationModal/RegistrationModal";
 import { IStore } from "../../types";
 
 import "./style.scss";
 
 const Header = (): JSX.Element => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const orderSize = useSelector((state: IStore) => state.orderSize);
   const history = useHistory();
-  const isModalOpen = useSelector((state: IStore) => state.isModalOpen);
+  const isBurgerOpen = useSelector((state: IStore) => state.isBurgerOpen);
   const dispatch = useDispatch();
 
   const onCartClickHandler = () => {
     history.push("/cart");
-    dispatch(closeModal());
+    dispatch(closeBurger());
   };
 
   const onClickLogoHandler = () => {
     history.push("/");
-    dispatch(closeModal());
+    dispatch(closeBurger());
   };
 
   const onClickBurgerHandler = () => {
-    dispatch(toggleModal());
+    dispatch(toggleBurger());
+  };
+
+  const loginModalHandler = () => {
+    console.log(`modal`);
+    setIsModalOpen(true);
   };
 
   return (
@@ -35,7 +42,7 @@ const Header = (): JSX.Element => {
           <button
             type="button"
             className={
-              isModalOpen
+              isBurgerOpen
                 ? "header__burger header__burger-active"
                 : "header__burger"
             }
@@ -54,11 +61,12 @@ const Header = (): JSX.Element => {
         </div>
 
         <div className="header__contacts">
-          <FontAwesomeIcon icon={faPhone} className="header__icon" />
+          {/* <FontAwesomeIcon icon={faPhone} className="header__icon" />
           <div className="header__phone">
             <p className="header__phone-description">Наш телефон</p>
             <p className="header__phone-number"> +7 (999) 999-99-99</p>
-          </div>
+          </div> */}
+          <button onClick={loginModalHandler}>LOGIN</button>
         </div>
 
         <button type="button" className="cart-btn" onClick={onCartClickHandler}>
@@ -77,6 +85,10 @@ const Header = (): JSX.Element => {
           ) : null}
         </button>
       </div>
+      <RegistrationModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
     </header>
   );
 };

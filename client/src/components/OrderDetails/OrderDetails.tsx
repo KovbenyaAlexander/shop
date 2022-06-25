@@ -43,7 +43,6 @@ const OrderDetails = (): JSX.Element => {
   });
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     setModalContent(data);
-    console.log(data);
     setIsModalOpen(true);
   };
 

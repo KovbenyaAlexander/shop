@@ -2,7 +2,7 @@ import { IStore } from "../types/store-types";
 
 export const initialStore: IStore = {
   orderSize: 11,
-  isModalOpen: false,
+  isBurgerOpen: false,
   foodCards: {
     cold: [
       {

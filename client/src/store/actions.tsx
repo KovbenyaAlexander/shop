@@ -22,14 +22,14 @@ export function deleteFoodFromCart(payload: string): AllActions {
   };
 }
 
-export function toggleModal(): AllActions {
+export function toggleBurger(): AllActions {
   return {
-    type: Actions.TOGGLE_MODAL,
+    type: Actions.TOGGLE_BURGER,
   };
 }
 
-export function closeModal(): AllActions {
+export function closeBurger(): AllActions {
   return {
-    type: Actions.CLOSE_MODAL,
+    type: Actions.CLOSE_BURGER,
   };
 }

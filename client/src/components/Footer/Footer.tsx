@@ -7,7 +7,7 @@ import { IStore } from "../../types";
 import "./style.scss";
 
 const Footer = (): JSX.Element => {
-  const isModalOpen = useSelector((state: IStore) => state.isModalOpen);
+  const isBurgerOpen = useSelector((state: IStore) => state.isBurgerOpen);
 
   const scrollToTopHandler = () => {
     window.scrollTo({
@@ -53,7 +53,7 @@ const Footer = (): JSX.Element => {
 
         <nav
           className={
-            isModalOpen ? "navigation navigation-burger" : "navigation"
+            isBurgerOpen ? "navigation navigation-burger" : "navigation"
           }
         >
           <ul className="navigation__list">

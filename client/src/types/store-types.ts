@@ -1,7 +1,7 @@
 export interface IStore {
   foodCards: IFoodCards;
   orderSize: number;
-  isModalOpen: boolean;
+  isBurgerOpen: boolean;
 }
 
 export interface IFoodCards {
