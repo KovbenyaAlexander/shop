@@ -6,7 +6,9 @@ export type AllActions =
   | { type: typeof Actions.DECREASE_GOODSINCART; payload: string }
   | { type: typeof Actions.DELETE_FOOD_FROM_CART; payload: string }
   | { type: typeof Actions.TOGGLE_BURGER }
-  | { type: typeof Actions.CLOSE_BURGER };
+  | { type: typeof Actions.CLOSE_BURGER }
+  | { type: typeof Actions.LOGOUT }
+  | { type: typeof Actions.SET_TOKEN; payload: string };
 
 export default function reducer(
   state: IStore = initialStore,
@@ -129,16 +131,27 @@ export default function reducer(
       newState.orderSize -= prevCountOfPurchase;
       return newState;
     }
-    case Actions.TOGGLE_BURGER:
+    case Actions.TOGGLE_BURGER: {
       return {
         ...state,
         isBurgerOpen: !state.isBurgerOpen,
       };
-    case Actions.CLOSE_BURGER:
+    }
+
+    case Actions.CLOSE_BURGER: {
       return {
         ...state,
         isBurgerOpen: false,
       };
+    }
+
+    case Actions.SET_TOKEN: {
+      return {
+        ...state,
+        token: action.payload,
+      };
+    }
+
     default:
       return state;
   }

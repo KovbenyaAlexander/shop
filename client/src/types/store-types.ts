@@ -2,6 +2,8 @@ export interface IStore {
   foodCards: IFoodCards;
   orderSize: number;
   isBurgerOpen: boolean;
+  isLoggedIn: boolean;
+  token: string;
 }
 
 export interface IFoodCards {

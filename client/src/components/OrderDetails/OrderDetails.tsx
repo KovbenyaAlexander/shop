@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import ModalWindow from "../Modal/Modal";
+import ModalWindow from "../infoModal/Modal";
 
 import * as yup from "yup";
 

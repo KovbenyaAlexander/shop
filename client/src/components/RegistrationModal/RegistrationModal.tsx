@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import registration from "../../store/thunk/registration";
+import { useSelector, useDispatch } from "react-redux";
+
 import "./style.scss";
 
 const style = {
@@ -16,8 +19,9 @@ const style = {
 };
 
 const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
+  const dispatch = useDispatch();
   const handleClose = () => setIsModalOpen(false);
-  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const loginHandler = () => {
@@ -26,6 +30,7 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
 
   const registrationHandler = () => {
     console.log(`reg`);
+    dispatch(registration(email, password));
   };
 
   return (
@@ -37,8 +42,8 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
     >
       <Box sx={style}>
         <input
-          onChange={(e) => setLogin(e.target.value)}
-          value={login}
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
           placeholder="Login"
         ></input>
         <input

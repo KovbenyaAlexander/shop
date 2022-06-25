@@ -33,3 +33,16 @@ export function closeBurger(): AllActions {
     type: Actions.CLOSE_BURGER,
   };
 }
+
+export function logout(): AllActions {
+  return {
+    type: Actions.LOGOUT,
+  };
+}
+
+export function setToken(token: string): AllActions {
+  return {
+    type: Actions.SET_TOKEN,
+    payload: token,
+  };
+}
