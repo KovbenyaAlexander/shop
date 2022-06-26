@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toggleBurger, closeBurger } from "../../store/actions";
+import { toggleBurger, closeBurger, logout } from "../../store/actions";
 import RegistrationModal from "../RegistrationModal/RegistrationModal";
 import { IStore } from "../../types";
 
@@ -15,6 +15,8 @@ const Header = (): JSX.Element => {
   const history = useHistory();
   const isBurgerOpen = useSelector((state: IStore) => state.isBurgerOpen);
   const dispatch = useDispatch();
+  const userEmail = useSelector((state: IStore) => state.user.email);
+  const accessToken = useSelector((state: IStore) => state.user.accessToken);
 
   const onCartClickHandler = () => {
     history.push("/cart");
@@ -66,7 +68,14 @@ const Header = (): JSX.Element => {
             <p className="header__phone-description">Наш телефон</p>
             <p className="header__phone-number"> +7 (999) 999-99-99</p>
           </div> */}
-          <button onClick={loginModalHandler}>LOGIN</button>
+          {accessToken ? (
+            <>
+              <span>{userEmail}</span>
+              <button onClick={() => dispatch(logout())}>Logout</button>
+            </>
+          ) : (
+            <button onClick={loginModalHandler}>LOGIN</button>
+          )}
         </div>
 
         <button type="button" className="cart-btn" onClick={onCartClickHandler}>

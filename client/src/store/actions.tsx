@@ -40,9 +40,9 @@ export function logout(): AllActions {
   };
 }
 
-export function setToken(token: string): AllActions {
+export function setUser(user: any): AllActions {
   return {
-    type: Actions.SET_TOKEN,
-    payload: token,
+    type: Actions.SET_USER,
+    payload: user,
   };
 }

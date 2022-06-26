@@ -1,4 +1,4 @@
-import { Actions, IStore, IFoodCard } from "../types";
+import { Actions, IStore, IFoodCard, IUSER } from "../types";
 import { initialStore } from "./initialStore";
 
 export type AllActions =
@@ -8,7 +8,7 @@ export type AllActions =
   | { type: typeof Actions.TOGGLE_BURGER }
   | { type: typeof Actions.CLOSE_BURGER }
   | { type: typeof Actions.LOGOUT }
-  | { type: typeof Actions.SET_TOKEN; payload: string };
+  | { type: typeof Actions.SET_USER; payload: IUSER };
 
 export default function reducer(
   state: IStore = initialStore,
@@ -145,10 +145,22 @@ export default function reducer(
       };
     }
 
-    case Actions.SET_TOKEN: {
+    case Actions.SET_USER: {
       return {
         ...state,
-        token: action.payload,
+        user: action.payload,
+      };
+    }
+
+    case Actions.LOGOUT: {
+      return {
+        ...state,
+        user: {
+          id: "",
+          email: "",
+          accessToken: "",
+          refreshToken: "",
+        },
       };
     }
 

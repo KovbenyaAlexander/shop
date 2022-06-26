@@ -1,5 +1,5 @@
 import AuthService from "../../services/AuthService";
-import { setToken } from "../actions";
+import { setUser } from "../actions";
 // import { setAuth, setUser, setLoadingStatus } from "../actions";
 // import M from "materialize-css";
 // import validateEmail from "../../../helpers/emailValidation";
@@ -20,9 +20,7 @@ const registration = (email, password) => {
       // dispatch(setLoadingStatus(true));
       const response = await AuthService.registration(email, password);
       localStorage.setItem("token", response.data.accessToken);
-      console.log(`succecs`);
-      console.log(response.data.accessToken);
-      dispatch(setToken(response.data.accessToken));
+      dispatch(setUser(response.data));
       // dispatch(setAuth(true));
       // dispatch(setUser(response.data.user));
       // M.toast({ html: "Registration successful" });

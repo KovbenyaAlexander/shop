@@ -4,7 +4,12 @@ export const initialStore: IStore = {
   orderSize: 11,
   isBurgerOpen: false,
   isLoggedIn: false,
-  token: "",
+  user: {
+    id: "",
+    email: "",
+    refreshToken: "",
+    accessToken: "",
+  },
   foodCards: {
     cold: [
       {

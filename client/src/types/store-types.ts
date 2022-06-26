@@ -3,7 +3,7 @@ export interface IStore {
   orderSize: number;
   isBurgerOpen: boolean;
   isLoggedIn: boolean;
-  token: string;
+  user: IUSER;
 }
 
 export interface IFoodCards {
@@ -25,4 +25,11 @@ export interface IFoodCard {
   carbohydrates: number;
   calories: number;
   inCart: boolean;
+}
+
+export interface IUSER {
+  id: string;
+  email: string;
+  accessToken: string;
+  refreshToken: string;
 }

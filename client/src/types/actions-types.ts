@@ -5,5 +5,5 @@ export enum Actions {
   TOGGLE_BURGER = "TOGGLE_BURGER",
   CLOSE_BURGER = "CLOSE_BURGER",
   LOGOUT = "LOGOUT",
-  SET_TOKEN = "SET_TOKEN",
+  SET_USER = "SET_USER",
 }

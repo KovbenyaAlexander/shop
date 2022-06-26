@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import registration from "../../store/thunk/registration";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./style.scss";
+import { IStore } from "../../types";
 
 const style = {
   position: "absolute" as "absolute",
@@ -23,6 +24,7 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
   const handleClose = () => setIsModalOpen(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const accesToken = useSelector((state: IStore) => state.user.accessToken);
 
   const loginHandler = () => {
     console.log(`login`);
@@ -32,6 +34,12 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
     console.log(`reg`);
     dispatch(registration(email, password));
   };
+
+  useEffect(() => {
+    if (accesToken) {
+      handleClose();
+    }
+  });
 
   return (
     <Modal
