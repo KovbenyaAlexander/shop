@@ -76,14 +76,6 @@ export default function reducer(
     case Actions.LOGOUT: {
       return {
         ...initialStore,
-
-        // user: {
-        //   id: "",
-        //   email: "",
-        //   accessToken: "",
-        //   refreshToken: "",
-        //   goods: {},
-        // },
       };
     }
 
@@ -111,6 +103,7 @@ export default function reducer(
             return {
               ...item,
               inCart: false,
+              numberOfPurchase: 0,
             };
           }),
           hot: state.foodCards.hot.map((item: IFoodCard) => {
@@ -124,6 +117,7 @@ export default function reducer(
             return {
               ...item,
               inCart: false,
+              numberOfPurchase: 0,
             };
           }),
           meet: state.foodCards.meet.map((item: IFoodCard) => {
@@ -137,6 +131,7 @@ export default function reducer(
             return {
               ...item,
               inCart: false,
+              numberOfPurchase: 0,
             };
           }),
         },
