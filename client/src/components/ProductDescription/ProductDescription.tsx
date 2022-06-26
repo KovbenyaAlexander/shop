@@ -9,7 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { adGoodsInCart, decreaseGoodsInCart } from "../../store/actions";
+import incGoods from "../../store/thunk/incGoods";
+import decGoods from "../../store/thunk/decGoods";
 import { IFoodCard, IStore } from "../../types";
 import FoodCard from "../FoodCard/FoodCard";
 import "./style.scss";
@@ -21,11 +22,11 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
   const card = allCards.find((item: IFoodCard) => item.id === id);
 
   const addGoodsHandler = () => {
-    dispatch(adGoodsInCart(card.id));
+    dispatch(incGoods(card.id));
   };
 
   const decreaseGoodsHandler = () => {
-    dispatch(decreaseGoodsInCart(card.id));
+    dispatch(decGoods(card.id));
   };
 
   return (

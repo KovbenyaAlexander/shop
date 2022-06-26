@@ -43,6 +43,24 @@ class GoodsController {
       next(e);
     }
   }
+
+  async remove(req, res, next) {
+    try {
+      const { goodsId, email } = req.body;
+      const user = await UserModel.findOne({ email });
+      if (!user) {
+        throw ApiError.BadRequest("User not found");
+      }
+
+      user.goods.delete(goodsId);
+
+      user.save();
+
+      return res.json(user.goods);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new GoodsController();

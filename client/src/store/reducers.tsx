@@ -16,122 +16,6 @@ export default function reducer(
   action: AllActions
 ): IStore {
   switch (action.type) {
-    case Actions.ADDGOODSINCART:
-      return {
-        ...state,
-        orderSize: state.orderSize + 1,
-        foodCards: {
-          cold: state.foodCards.cold.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              return {
-                ...item,
-                inCart: true,
-                numberOfPurchase: item.numberOfPurchase + 1,
-              };
-            }
-            return item;
-          }),
-          hot: state.foodCards.hot.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              return {
-                ...item,
-                inCart: true,
-                numberOfPurchase: item.numberOfPurchase + 1,
-              };
-            }
-            return item;
-          }),
-          meet: state.foodCards.meet.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              return {
-                ...item,
-                inCart: true,
-                numberOfPurchase: item.numberOfPurchase + 1,
-              };
-            }
-            return item;
-          }),
-        },
-      };
-    case Actions.DECREASE_GOODSINCART: {
-      return {
-        ...state,
-        orderSize: state.orderSize - 1,
-        foodCards: {
-          cold: state.foodCards.cold.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              return {
-                ...item,
-                numberOfPurchase: item.numberOfPurchase - 1,
-              };
-            }
-            return item;
-          }),
-          hot: state.foodCards.hot.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              return {
-                ...item,
-                numberOfPurchase: item.numberOfPurchase - 1,
-              };
-            }
-            return item;
-          }),
-          meet: state.foodCards.meet.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              return {
-                ...item,
-                numberOfPurchase: item.numberOfPurchase - 1,
-              };
-            }
-            return item;
-          }),
-        },
-      };
-    }
-    case Actions.DELETE_FOOD_FROM_CART: {
-      let prevCountOfPurchase = 0;
-      const newState = {
-        ...state,
-
-        foodCards: {
-          cold: state.foodCards.cold.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              prevCountOfPurchase = item.numberOfPurchase;
-              return {
-                ...item,
-                inCart: false,
-                numberOfPurchase: 0,
-              };
-            }
-            return item;
-          }),
-          hot: state.foodCards.hot.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              prevCountOfPurchase = item.numberOfPurchase;
-              return {
-                ...item,
-                inCart: false,
-                numberOfPurchase: 0,
-              };
-            }
-            return item;
-          }),
-          meet: state.foodCards.meet.map((item: IFoodCard) => {
-            if (item.id === action.payload) {
-              prevCountOfPurchase = item.numberOfPurchase;
-              return {
-                ...item,
-                inCart: false,
-                numberOfPurchase: 0,
-              };
-            }
-            return item;
-          }),
-        },
-      };
-      newState.orderSize -= prevCountOfPurchase;
-      return newState;
-    }
     case Actions.TOGGLE_BURGER: {
       return {
         ...state,
@@ -150,28 +34,111 @@ export default function reducer(
       return {
         ...state,
         user: action.payload,
+        orderSize: Object.values(action.payload.goods).reduce(
+          (sum, item) => sum + +item,
+          0
+        ),
+        foodCards: {
+          cold: state.foodCards.cold.map((item: IFoodCard) => {
+            if (Object.keys(action.payload.goods).includes(item.id)) {
+              return {
+                ...item,
+                inCart: true,
+                numberOfPurchase: Number(action.payload.goods[item.id]),
+              };
+            }
+            return item;
+          }),
+          hot: state.foodCards.hot.map((item: IFoodCard) => {
+            if (Object.keys(action.payload.goods).includes(item.id)) {
+              return {
+                ...item,
+                inCart: true,
+                numberOfPurchase: Number(action.payload.goods[item.id]),
+              };
+            }
+            return item;
+          }),
+          meet: state.foodCards.meet.map((item: IFoodCard) => {
+            if (Object.keys(action.payload.goods).includes(item.id)) {
+              return {
+                ...item,
+                inCart: true,
+                numberOfPurchase: Number(action.payload.goods[item.id]),
+              };
+            }
+            return item;
+          }),
+        },
       };
     }
 
     case Actions.LOGOUT: {
       return {
-        ...state,
-        user: {
-          id: "",
-          email: "",
-          accessToken: "",
-          refreshToken: "",
-          goods: {},
-        },
+        ...initialStore,
+
+        // user: {
+        //   id: "",
+        //   email: "",
+        //   accessToken: "",
+        //   refreshToken: "",
+        //   goods: {},
+        // },
       };
     }
 
     case Actions.SET_GOODS: {
       return {
         ...state,
+
         user: {
           ...state.user,
           goods: action.payload,
+        },
+        orderSize: Object.values(action.payload).reduce(
+          (sum, item) => sum + +item,
+          0
+        ),
+        foodCards: {
+          cold: state.foodCards.cold.map((item: IFoodCard) => {
+            if (Object.keys(action.payload).includes(item.id)) {
+              return {
+                ...item,
+                inCart: true,
+                numberOfPurchase: Number(action.payload[item.id]),
+              };
+            }
+            return {
+              ...item,
+              inCart: false,
+            };
+          }),
+          hot: state.foodCards.hot.map((item: IFoodCard) => {
+            if (Object.keys(action.payload).includes(item.id)) {
+              return {
+                ...item,
+                inCart: true,
+                numberOfPurchase: Number(action.payload[item.id]),
+              };
+            }
+            return {
+              ...item,
+              inCart: false,
+            };
+          }),
+          meet: state.foodCards.meet.map((item: IFoodCard) => {
+            if (Object.keys(action.payload).includes(item.id)) {
+              return {
+                ...item,
+                inCart: true,
+                numberOfPurchase: Number(action.payload[item.id]),
+              };
+            }
+            return {
+              ...item,
+              inCart: false,
+            };
+          }),
         },
       };
     }

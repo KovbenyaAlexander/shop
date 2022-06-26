@@ -32,7 +32,6 @@ const Header = (): JSX.Element => {
   };
 
   const loginModalHandler = () => {
-    console.log(`modal`);
     setIsModalOpen(true);
   };
 

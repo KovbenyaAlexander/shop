@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { faMinus, faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IFoodCard, IStore } from "../../types";
-import {
-  adGoodsInCart,
-  decreaseGoodsInCart,
-  deleteFoodFromCart,
-} from "../../store/actions";
+import { deleteFoodFromCart } from "../../store/actions";
+import incGoods from "../../store/thunk/incGoods";
+import decGoods from "../../store/thunk/decGoods";
+import removeGoodsFromCart from "../../store/thunk/removeGoodsFromCart";
 import "./style.scss";
 
 const CartList = (): JSX.Element => {
@@ -18,15 +17,15 @@ const CartList = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const incFoodHandler = (id: string) => {
-    dispatch(adGoodsInCart(id));
+    dispatch(incGoods(id));
   };
 
   const decFoodHandler = (id: string) => {
-    dispatch(decreaseGoodsInCart(id));
+    dispatch(decGoods(id));
   };
 
   const deleteFoodHandler = (id: string) => {
-    dispatch(deleteFoodFromCart(id));
+    dispatch(removeGoodsFromCart(id));
   };
 
   return (

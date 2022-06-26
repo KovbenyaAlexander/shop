@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IFoodCard, IStore } from "../../types";
-import { adGoodsInCart } from "../../store/actions";
+import incGoods from "../../store/thunk/incGoods";
 import "./style.scss";
 
 const CartAddToOrder = (): JSX.Element => {
@@ -13,7 +13,7 @@ const CartAddToOrder = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const incFoodHandler = (id: string) => {
-    dispatch(adGoodsInCart(id));
+    dispatch(incGoods(id));
   };
 
   return (
