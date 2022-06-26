@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import registration from "../../store/thunk/registration";
+import login from "../../store/thunk/login";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./style.scss";
@@ -28,6 +29,7 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
 
   const loginHandler = () => {
     console.log(`login`);
+    dispatch(login(email, password));
   };
 
   const registrationHandler = () => {

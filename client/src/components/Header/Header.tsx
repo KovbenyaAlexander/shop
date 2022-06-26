@@ -36,6 +36,12 @@ const Header = (): JSX.Element => {
     setIsModalOpen(true);
   };
 
+  const logoutHandler = () => {
+    dispatch(logout());
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+  };
+
   return (
     <header className="header">
       <div className="wrapper">
@@ -70,7 +76,7 @@ const Header = (): JSX.Element => {
           {userEmail ? (
             <>
               <span>{userEmail}</span>
-              <button onClick={() => dispatch(logout())}>Logout</button>
+              <button onClick={logoutHandler}>LOGOUT</button>
             </>
           ) : (
             <button onClick={loginModalHandler}>LOGIN</button>
