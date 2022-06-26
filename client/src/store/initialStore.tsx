@@ -9,6 +9,7 @@ export const initialStore: IStore = {
     email: "",
     refreshToken: "",
     accessToken: "",
+    goods: {},
   },
   foodCards: {
     cold: [
@@ -25,7 +26,7 @@ export const initialStore: IStore = {
         fat: 564,
         carbohydrates: 458,
         calories: 954,
-        inCart: true,
+        inCart: false,
       },
       {
         id: "2",
@@ -54,7 +55,7 @@ export const initialStore: IStore = {
         fat: 258,
         carbohydrates: 5887,
         calories: 327,
-        inCart: true,
+        inCart: false,
       },
       {
         id: "4",

@@ -32,4 +32,9 @@ export interface IUSER {
   email: string;
   accessToken: string;
   refreshToken: string;
+  goods: IGoods;
+}
+
+export interface IGoods {
+  [key: string]: string;
 }

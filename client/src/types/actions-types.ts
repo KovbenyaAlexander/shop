@@ -6,4 +6,5 @@ export enum Actions {
   CLOSE_BURGER = "CLOSE_BURGER",
   LOGOUT = "LOGOUT",
   SET_USER = "SET_USER",
+  SET_GOODS = "SET_GOODS",
 }

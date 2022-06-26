@@ -18,7 +18,7 @@ class GoodsController {
       }
       user.save();
 
-      return res.json(`done...`);
+      return res.json(user.goods);
     } catch (e) {
       next(e);
     }
@@ -38,7 +38,7 @@ class GoodsController {
       }
       user.save();
 
-      return res.json(`done...`);
+      return res.json(user.goods);
     } catch (e) {
       next(e);
     }

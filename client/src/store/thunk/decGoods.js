@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setGoods } from "../actions";
 
 const decGoods = (goodsId) => {
   return async (dispatch, getState) => {
@@ -7,6 +8,7 @@ const decGoods = (goodsId) => {
       goodsId,
       email,
     });
+    dispatch(setGoods(response.data));
   };
 };
 

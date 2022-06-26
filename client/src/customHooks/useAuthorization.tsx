@@ -8,7 +8,7 @@ function useAuthorization() {
   const token = localStorage.getItem("token");
   const email = localStorage.getItem("email");
   const dispatch = useDispatch();
-  console.log(`UA`);
+
   useEffect(() => {
     if (!token || !email) {
       localStorage.clear();

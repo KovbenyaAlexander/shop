@@ -1,4 +1,4 @@
-import { Actions, IUSER } from "../types";
+import { Actions, IUSER, IGoods } from "../types";
 import { AllActions } from "./reducers";
 
 export function adGoodsInCart(payload: string): AllActions {
@@ -44,5 +44,12 @@ export function setUser(user: IUSER): AllActions {
   return {
     type: Actions.SET_USER,
     payload: user,
+  };
+}
+
+export function setGoods(goods: IGoods): AllActions {
+  return {
+    type: Actions.SET_GOODS,
+    payload: goods,
   };
 }
