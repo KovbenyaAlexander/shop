@@ -23,6 +23,9 @@ class UserService {
       email,
       password: hachPassword,
       activationLink,
+      goods: {
+        1: "1",
+      },
     });
 
     // await mailServise.sendActivationMail(

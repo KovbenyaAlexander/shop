@@ -6,6 +6,8 @@ import { faCartPlus, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import { IFoodCard } from "../../types";
 import { adGoodsInCart, decreaseGoodsInCart } from "../../store/actions";
+import incGoods from "../../store/thunk/incGoods";
+import decGoods from "../../store/thunk/decGoods";
 import "swiper/css";
 
 const FoodCard = ({ cardInfo }: { cardInfo: IFoodCard }): JSX.Element => {
@@ -15,11 +17,13 @@ const FoodCard = ({ cardInfo }: { cardInfo: IFoodCard }): JSX.Element => {
   const addGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     dispatch(adGoodsInCart(cardInfo.id));
+    dispatch(incGoods(cardInfo.id));
   };
 
   const decreaseGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     dispatch(decreaseGoodsInCart(cardInfo.id));
+    dispatch(decGoods(cardInfo.id));
   };
 
   const onCardClickHandler = (e: any) => {
