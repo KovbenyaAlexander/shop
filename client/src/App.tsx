@@ -6,37 +6,42 @@ import Cart from "./Pages/Cart/Cart";
 import Main from "./Pages/Main/Main";
 import FoodDescription from "./Pages/FoodDescription/FoodDescription";
 import Order from "./Pages/Order/Order";
+import useAuthorization from "./customHooks/useAuthorization";
 
-const App = (): JSX.Element => (
-  <div className="app">
-    <Header />
+const App = (): JSX.Element => {
+  useAuthorization();
 
-    <Route path="/" exact>
-      <Main />
-    </Route>
+  return (
+    <div className="app">
+      <Header />
 
-    <Route path="/cart" exact>
-      <Cart />
-    </Route>
+      <Route path="/" exact>
+        <Main />
+      </Route>
 
-    <Route path="/order" exact>
-      <Order />
-    </Route>
+      <Route path="/cart" exact>
+        <Cart />
+      </Route>
 
-    <Route
-      path="/food/:id"
-      render={({ match }) => {
-        const currentID = match.params.id;
-        return (
-          <>
-            <FoodDescription id={currentID} />
-          </>
-        );
-      }}
-    />
+      <Route path="/order" exact>
+        <Order />
+      </Route>
 
-    <div className="bottom-shadow" />
-  </div>
-);
+      <Route
+        path="/food/:id"
+        render={({ match }) => {
+          const currentID = match.params.id;
+          return (
+            <>
+              <FoodDescription id={currentID} />
+            </>
+          );
+        }}
+      />
+
+      <div className="bottom-shadow" />
+    </div>
+  );
+};
 
 export default App;

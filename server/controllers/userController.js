@@ -83,6 +83,15 @@ class UserController {
       next(e);
     }
   }
+
+  async getUser(req, res, next) {
+    try {
+      const user = await userService.getUser(req.body.email);
+      return res.json(user);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new UserController();

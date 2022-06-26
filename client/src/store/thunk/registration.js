@@ -19,7 +19,9 @@ const registration = (email, password) => {
     try {
       // dispatch(setLoadingStatus(true));
       const response = await AuthService.registration(email, password);
+      console.log(response.data);
       localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("email", response.data.email);
       dispatch(setUser(response.data));
       // dispatch(setAuth(true));
       // dispatch(setUser(response.data.user));

@@ -16,7 +16,6 @@ const Header = (): JSX.Element => {
   const isBurgerOpen = useSelector((state: IStore) => state.isBurgerOpen);
   const dispatch = useDispatch();
   const userEmail = useSelector((state: IStore) => state.user.email);
-  const accessToken = useSelector((state: IStore) => state.user.accessToken);
 
   const onCartClickHandler = () => {
     history.push("/cart");
@@ -68,7 +67,7 @@ const Header = (): JSX.Element => {
             <p className="header__phone-description">Наш телефон</p>
             <p className="header__phone-number"> +7 (999) 999-99-99</p>
           </div> */}
-          {accessToken ? (
+          {userEmail ? (
             <>
               <span>{userEmail}</span>
               <button onClick={() => dispatch(logout())}>Logout</button>

@@ -1,4 +1,4 @@
-import { Actions } from "../types";
+import { Actions, IUSER } from "../types";
 import { AllActions } from "./reducers";
 
 export function adGoodsInCart(payload: string): AllActions {
@@ -40,7 +40,7 @@ export function logout(): AllActions {
   };
 }
 
-export function setUser(user: any): AllActions {
+export function setUser(user: IUSER): AllActions {
   return {
     type: Actions.SET_USER,
     payload: user,

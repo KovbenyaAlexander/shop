@@ -18,5 +18,6 @@ router.get("/refresh", userController.refresh);
 router.get("/users", userController.getUsers);
 router.post("/goods/inc", goodsController.inc);
 router.post("/goods/dec", goodsController.dec);
+router.post("/getUser", userController.getUser);
 
 module.exports = router;
