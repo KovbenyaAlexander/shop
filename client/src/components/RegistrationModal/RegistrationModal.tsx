@@ -30,6 +30,7 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
   const loginHandler = () => {
     console.log(`login`);
     dispatch(login(email, password));
+    handleClose();
   };
 
   const registrationHandler = () => {

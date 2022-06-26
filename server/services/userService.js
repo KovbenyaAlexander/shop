@@ -69,10 +69,7 @@ class UserService {
 
     await tokenService.saveToken(userDto.id, tokens.refreshToken);
 
-    return {
-      ...tokens,
-      ...userDto,
-    };
+    return user;
   }
 
   async logout(refreshToken) {

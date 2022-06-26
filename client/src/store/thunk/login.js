@@ -9,6 +9,9 @@ const login = (email, password) => {
       password,
     });
     dispatch(setUser(response.data));
+
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("email", response.data.email);
   };
 };
 
