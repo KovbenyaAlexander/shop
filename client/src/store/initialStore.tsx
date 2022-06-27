@@ -3,7 +3,6 @@ import { IStore } from "../types/store-types";
 export const initialStore: IStore = {
   orderSize: 0,
   isBurgerOpen: false,
-  isLoggedIn: false,
   cartLocal: {},
   user: {
     id: "",

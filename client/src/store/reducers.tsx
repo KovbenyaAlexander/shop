@@ -1,6 +1,6 @@
 import { cardHeaderClasses } from "@mui/material";
 import { object } from "yup";
-import { Actions, IStore, IFoodCard, IUSER, IGoods } from "../types";
+import { Actions, IStore, IFoodCard, IUser, IGoods } from "../types";
 import { initialStore } from "./initialStore";
 
 export type AllActions =
@@ -10,7 +10,7 @@ export type AllActions =
   | { type: typeof Actions.TOGGLE_BURGER }
   | { type: typeof Actions.CLOSE_BURGER }
   | { type: typeof Actions.LOGOUT }
-  | { type: typeof Actions.SET_USER; payload: IUSER }
+  | { type: typeof Actions.SET_USER; payload: IUser }
   | { type: typeof Actions.SET_GOODS; payload: IGoods }
   | { type: typeof Actions.INC_GOODS_LOCAL; payload: string }
   | { type: typeof Actions.DEC_GOODS_LOCAL; payload: string }

@@ -2,8 +2,7 @@ export interface IStore {
   foodCards: IFoodCards;
   orderSize: number;
   isBurgerOpen: boolean;
-  isLoggedIn: boolean;
-  user: IUSER;
+  user: IUser;
   cartLocal: IGoods;
 }
 
@@ -28,7 +27,7 @@ export interface IFoodCard {
   inCart: boolean;
 }
 
-export interface IUSER {
+export interface IUser {
   id: string;
   email: string;
   accessToken: string;
