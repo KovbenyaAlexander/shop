@@ -13,6 +13,7 @@ import incGoods from "../../store/thunk/incGoods";
 import decGoods from "../../store/thunk/decGoods";
 import { IFoodCard, IStore } from "../../types";
 import FoodCard from "../FoodCard/FoodCard";
+import { incGoodsLocal, decGoodsLocal } from "../../store/actions";
 import "./style.scss";
 
 const ProductDescription = ({ id }: { id: string }): JSX.Element => {
@@ -20,13 +21,22 @@ const ProductDescription = ({ id }: { id: string }): JSX.Element => {
   const foodCards = useSelector((state: IStore) => state.foodCards);
   const allCards = Object.values(foodCards).flat();
   const card = allCards.find((item: IFoodCard) => item.id === id);
+  const email = useSelector((state: IStore) => state.user.email);
 
   const addGoodsHandler = () => {
-    dispatch(incGoods(card.id));
+    if (email) {
+      dispatch(incGoods(card.id));
+    } else {
+      dispatch(incGoodsLocal(card.id));
+    }
   };
 
   const decreaseGoodsHandler = () => {
-    dispatch(decGoods(card.id));
+    if (email) {
+      dispatch(decGoods(card.id));
+    } else {
+      dispatch(decGoodsLocal(card.id));
+    }
   };
 
   return (

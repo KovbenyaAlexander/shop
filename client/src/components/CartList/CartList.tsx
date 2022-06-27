@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { faMinus, faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IFoodCard, IStore } from "../../types";
-import { deleteFoodFromCart } from "../../store/actions";
+import {
+  incGoodsLocal,
+  decGoodsLocal,
+  removeGoodsFromCartLocal,
+} from "../../store/actions";
 import incGoods from "../../store/thunk/incGoods";
 import decGoods from "../../store/thunk/decGoods";
 import removeGoodsFromCart from "../../store/thunk/removeGoodsFromCart";
@@ -13,19 +17,32 @@ const CartList = (): JSX.Element => {
   const foodCards = useSelector((state: IStore) => state.foodCards);
   const allCards = Object.values(foodCards).flat();
   const cardsInCart = allCards.filter((card: IFoodCard) => card.inCart);
+  const email = useSelector((state: IStore) => state.user.email);
 
   const dispatch = useDispatch();
 
   const incFoodHandler = (id: string) => {
-    dispatch(incGoods(id));
+    if (email) {
+      dispatch(incGoods(id));
+    } else {
+      dispatch(incGoodsLocal(id));
+    }
   };
 
   const decFoodHandler = (id: string) => {
-    dispatch(decGoods(id));
+    if (email) {
+      dispatch(decGoods(id));
+    } else {
+      dispatch(decGoodsLocal(id));
+    }
   };
 
   const deleteFoodHandler = (id: string) => {
-    dispatch(removeGoodsFromCart(id));
+    if (email) {
+      dispatch(removeGoodsFromCart(id));
+    } else {
+      dispatch(removeGoodsFromCartLocal(id));
+    }
   };
 
   return (

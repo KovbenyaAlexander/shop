@@ -3,17 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IFoodCard, IStore } from "../../types";
+import { incGoodsLocal } from "../../store/actions";
 import incGoods from "../../store/thunk/incGoods";
 import "./style.scss";
 
 const CartAddToOrder = (): JSX.Element => {
   const foodCards = useSelector((state: IStore) => state.foodCards);
   const allCards = Object.values(foodCards).flat();
-
+  const email = useSelector((state: IStore) => state.user.email);
   const dispatch = useDispatch();
 
   const incFoodHandler = (id: string) => {
-    dispatch(incGoods(id));
+    if (email) {
+      dispatch(incGoods(id));
+    } else {
+      dispatch(incGoodsLocal(id));
+    }
   };
 
   return (

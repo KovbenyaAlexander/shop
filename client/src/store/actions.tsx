@@ -53,3 +53,21 @@ export function setGoods(goods: IGoods): AllActions {
     payload: goods,
   };
 }
+export function incGoodsLocal(id: string): AllActions {
+  return {
+    type: Actions.INC_GOODS_LOCAL,
+    payload: id,
+  };
+}
+export function decGoodsLocal(id: string): AllActions {
+  return {
+    type: Actions.DEC_GOODS_LOCAL,
+    payload: id,
+  };
+}
+export function removeGoodsFromCartLocal(id: string): AllActions {
+  return {
+    type: Actions.DELETE_FOOD_FROM_CART_LOCAL,
+    payload: id,
+  };
+}

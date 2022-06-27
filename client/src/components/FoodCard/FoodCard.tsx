@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -7,20 +7,31 @@ import { useHistory } from "react-router-dom";
 import { IFoodCard } from "../../types";
 import incGoods from "../../store/thunk/incGoods";
 import decGoods from "../../store/thunk/decGoods";
+import { incGoodsLocal, decGoodsLocal } from "../../store/actions";
+import { IStore } from "../../types";
 import "swiper/css";
 
 const FoodCard = ({ cardInfo }: { cardInfo: IFoodCard }): JSX.Element => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const email = useSelector((state: IStore) => state.user.email);
 
   const addGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    dispatch(incGoods(cardInfo.id));
+    if (email) {
+      dispatch(incGoods(cardInfo.id));
+    } else {
+      dispatch(incGoodsLocal(cardInfo.id));
+    }
   };
 
   const decreaseGoodsHandler = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    dispatch(decGoods(cardInfo.id));
+    if (email) {
+      dispatch(decGoods(cardInfo.id));
+    } else {
+      dispatch(decGoodsLocal(cardInfo.id));
+    }
   };
 
   const onCardClickHandler = (e: any) => {

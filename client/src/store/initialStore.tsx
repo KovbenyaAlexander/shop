@@ -4,6 +4,7 @@ export const initialStore: IStore = {
   orderSize: 0,
   isBurgerOpen: false,
   isLoggedIn: false,
+  cartLocal: {},
   user: {
     id: "",
     email: "",

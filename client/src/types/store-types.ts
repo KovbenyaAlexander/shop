@@ -4,6 +4,7 @@ export interface IStore {
   isBurgerOpen: boolean;
   isLoggedIn: boolean;
   user: IUSER;
+  cartLocal: IGoods;
 }
 
 export interface IFoodCards {
@@ -36,5 +37,5 @@ export interface IUSER {
 }
 
 export interface IGoods {
-  [key: string]: string;
+  [key: string]: number;
 }
