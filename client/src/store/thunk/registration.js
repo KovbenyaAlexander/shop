@@ -26,7 +26,6 @@ const registration = (email, password) => {
         localCart
       );
 
-      console.log(response.data);
       localStorage.setItem("token", response.data.accessToken);
       localStorage.setItem("email", response.data.email);
       dispatch(setUser(response.data));

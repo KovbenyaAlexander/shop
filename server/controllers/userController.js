@@ -20,7 +20,7 @@ class UserController {
         maxAge: 2592000000,
         httpOnly: true,
       });
-      return res.json(userData);
+      return res.json({ ...userData, goods: localCart });
     } catch (e) {
       next(e);
     }
