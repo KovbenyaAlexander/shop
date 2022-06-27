@@ -8,7 +8,7 @@ const apiError = require("../exceptions/apiError");
 const ApiError = require("../exceptions/apiError");
 
 class UserService {
-  async registration(email, password) {
+  async registration(email, password, localCart) {
     const candidate = await UserModel.findOne({ email });
 
     if (candidate) {
@@ -23,9 +23,7 @@ class UserService {
       email,
       password: hachPassword,
       activationLink,
-      goods: {
-        1: "1",
-      },
+      goods: localCart,
     });
 
     // await mailServise.sendActivationMail(

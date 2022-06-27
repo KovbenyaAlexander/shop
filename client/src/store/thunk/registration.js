@@ -5,7 +5,7 @@ import { setUser } from "../actions";
 // import validateEmail from "../../../helpers/emailValidation";
 
 const registration = (email, password) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     // const resultOfEmailvalidation = validateEmail(email);
     // if (!resultOfEmailvalidation) {
     // M.toast({ html: "Invalid email" });
@@ -18,7 +18,14 @@ const registration = (email, password) => {
     // }
     try {
       // dispatch(setLoadingStatus(true));
-      const response = await AuthService.registration(email, password);
+      const localCart = getState().cartLocal;
+
+      const response = await AuthService.registration(
+        email,
+        password,
+        localCart
+      );
+
       console.log(response.data);
       localStorage.setItem("token", response.data.accessToken);
       localStorage.setItem("email", response.data.email);
