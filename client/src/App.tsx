@@ -9,8 +9,12 @@ import Order from "./Pages/Order/Order";
 import useAuthorization from "./customHooks/useAuthorization";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import Loader from "./components/Loader/Loader";
 
 const App = (): JSX.Element => {
+  const isLoading = useSelector((state: any) => state.isLoading);
+
   useAuthorization();
 
   useEffect(() => {
@@ -57,6 +61,8 @@ const App = (): JSX.Element => {
         pauseOnHover
         toastStyle={{ backgroundColor: "rgb(212, 211, 212)" }}
       />
+      {isLoading && <Loader />}
+
       <div className="bottom-shadow" />
     </div>
   );

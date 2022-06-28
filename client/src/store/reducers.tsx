@@ -1,5 +1,3 @@
-import { cardHeaderClasses } from "@mui/material";
-import { object } from "yup";
 import { Actions, IStore, IFoodCard, IUser, IGoods } from "../types";
 import { initialStore } from "./initialStore";
 
@@ -14,7 +12,8 @@ export type AllActions =
   | { type: typeof Actions.SET_GOODS; payload: IGoods }
   | { type: typeof Actions.INC_GOODS_LOCAL; payload: string }
   | { type: typeof Actions.DEC_GOODS_LOCAL; payload: string }
-  | { type: typeof Actions.DELETE_FOOD_FROM_CART_LOCAL; payload: string };
+  | { type: typeof Actions.DELETE_FOOD_FROM_CART_LOCAL; payload: string }
+  | { type: typeof Actions.SET_LOADING; payload: boolean };
 
 export default function reducer(
   state: IStore = initialStore,
@@ -279,6 +278,13 @@ export default function reducer(
       };
       newState.orderSize -= prevCountOfPurchase;
       return newState;
+    }
+
+    case Actions.SET_LOADING: {
+      return {
+        ...state,
+        isLoading: action.payload,
+      };
     }
 
     default:

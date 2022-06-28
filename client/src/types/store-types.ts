@@ -4,6 +4,7 @@ export interface IStore {
   isBurgerOpen: boolean;
   user: IUser;
   cartLocal: IGoods;
+  isLoading: boolean;
 }
 
 export interface IFoodCards {

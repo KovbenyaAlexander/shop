@@ -65,9 +65,17 @@ export function decGoodsLocal(id: string): AllActions {
     payload: id,
   };
 }
+
 export function removeGoodsFromCartLocal(id: string): AllActions {
   return {
     type: Actions.DELETE_FOOD_FROM_CART_LOCAL,
     payload: id,
+  };
+}
+
+export function setLoading(isLoading: boolean): AllActions {
+  return {
+    type: Actions.SET_LOADING,
+    payload: isLoading,
   };
 }

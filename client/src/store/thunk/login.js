@@ -1,10 +1,11 @@
 import axios from "axios";
-import { setUser } from "../actions";
+import { setUser, setLoading } from "../actions";
 import { toast } from "react-toastify";
 
-const login = (email, password) => {
+const login = (email, password, handleClose) => {
   return async (dispatch, getState) => {
     try {
+      dispatch(setLoading(true));
       const response = await axios.post(`http://localhost:5000/api/login`, {
         email,
         password,
@@ -20,6 +21,9 @@ const login = (email, password) => {
       } else {
         toast(`Server error`);
       }
+    } finally {
+      handleClose();
+      dispatch(setLoading(false));
     }
   };
 };

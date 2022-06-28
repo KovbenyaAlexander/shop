@@ -1,11 +1,11 @@
 import AuthService from "../../services/AuthService";
-import { setUser } from "../actions";
+import { setUser, setLoading } from "../actions";
 import { toast } from "react-toastify";
 
-const registration = (email, password) => {
+const registration = (email, password, handleClose) => {
   return async (dispatch, getState) => {
     try {
-      // dispatch(setLoadingStatus(true));
+      dispatch(setLoading(true));
       const localCart = getState().cartLocal;
       const response = await AuthService.registration(
         email,
@@ -25,7 +25,8 @@ const registration = (email, password) => {
         toast(`Server error`);
       }
     } finally {
-      // dispatch(setLoadingStatus(false));
+      handleClose();
+      dispatch(setLoading(false));
     }
   };
 };
