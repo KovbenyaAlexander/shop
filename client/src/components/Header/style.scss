@@ -40,15 +40,45 @@
     height: 99px;
     margin: 0 auto;
 
-    .header__contacts {
+    .header__login {
       display: flex;
       color: #cfcfcf;
       justify-content: end;
       align-items: center;
       padding-right: 50px;
+      font-size: 20px;
 
-      p {
-        font-size: 18px;
+      .login-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        align-self: center;
+        width: 149px;
+        height: 52px;
+        background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+        border-radius: 10px;
+        color: #fff;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        &__counter {
+          background-color: #fff;
+          display: inline-block;
+          color: black;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          line-height: 30px;
+          &-small {
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+        &:hover {
+          background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+          box-shadow: 0px 5px 10px rgba(114, 163, 121, 0.7);
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
 

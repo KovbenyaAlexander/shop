@@ -66,19 +66,18 @@ const Header = (): JSX.Element => {
           </button>
         </div>
 
-        <div className="header__contacts">
-          {/* <FontAwesomeIcon icon={faPhone} className="header__icon" />
-          <div className="header__phone">
-            <p className="header__phone-description">Наш телефон</p>
-            <p className="header__phone-number"> +7 (999) 999-99-99</p>
-          </div> */}
+        <div className="header__login">
           {userEmail ? (
             <>
               <span>{userEmail}</span>
-              <button onClick={logoutHandler}>LOGOUT</button>
+              <button className="login-btn" onClick={logoutHandler}>
+                Выйти
+              </button>
             </>
           ) : (
-            <button onClick={loginModalHandler}>LOGIN</button>
+            <button className="login-btn" onClick={loginModalHandler}>
+              Войти
+            </button>
           )}
         </div>
 
