@@ -16,9 +16,8 @@ const App = (): JSX.Element => {
   const isLoading = useSelector((state: any) => state.isLoading);
 
   useAuthorization();
-
   useEffect(() => {
-    axios.get("http://localhost:5000/api/checkServer");
+    axios.get(`${process.env.REACT_APP_SERVR_URL}/checkServer`);
   });
 
   return (

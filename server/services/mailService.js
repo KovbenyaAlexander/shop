@@ -7,7 +7,7 @@ class MailService {
       sucure: false,
       auth: {
         user: "regconfirm.v2@gmail.com",
-        pass: "7p[P_{&GXEkmCa798+mJ@",
+        pass: "regconfirm.v2@gmail.com",
       },
     });
   }

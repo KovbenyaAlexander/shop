@@ -6,10 +6,13 @@ const login = (email, password, handleClose) => {
   return async (dispatch, getState) => {
     try {
       dispatch(setLoading(true));
-      const response = await axios.post(`http://localhost:5000/api/login`, {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVR_URL}/login`,
+        {
+          email,
+          password,
+        }
+      );
       dispatch(setUser(response.data));
 
       localStorage.setItem("token", response.data.token);
