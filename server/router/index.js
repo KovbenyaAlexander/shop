@@ -20,5 +20,6 @@ router.post("/goods/inc", goodsController.inc);
 router.post("/goods/dec", goodsController.dec);
 router.post("/goods/remove", goodsController.remove);
 router.post("/getUser", userController.getUser);
+router.get("/checkServer", userController.checkServer);
 
 module.exports = router;

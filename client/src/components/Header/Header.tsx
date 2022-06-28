@@ -69,7 +69,7 @@ const Header = (): JSX.Element => {
         <div className="header__login">
           {userEmail ? (
             <>
-              <span>{userEmail}</span>
+              <span className="header__email">{userEmail}</span>
               <button className="login-btn" onClick={logoutHandler}>
                 Выйти
               </button>
@@ -84,7 +84,7 @@ const Header = (): JSX.Element => {
         <button type="button" className="cart-btn" onClick={onCartClickHandler}>
           <span className="cart-btn-text">Корзина</span>
 
-          {orderSize > 0 ? (
+          {orderSize >= 0 ? (
             <>
               {orderSize < 100 ? (
                 <span className="cart-btn__counter">{orderSize}</span>

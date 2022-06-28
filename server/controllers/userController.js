@@ -97,6 +97,15 @@ class UserController {
       next(e);
     }
   }
+
+  async checkServer(req, res, next) {
+    try {
+      console.log(`CHECK`);
+      return res.json(`OK`);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new UserController();

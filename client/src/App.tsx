@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.scss";
 import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
@@ -7,10 +7,15 @@ import Main from "./Pages/Main/Main";
 import FoodDescription from "./Pages/FoodDescription/FoodDescription";
 import Order from "./Pages/Order/Order";
 import useAuthorization from "./customHooks/useAuthorization";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import axios from "axios";
 
 const App = (): JSX.Element => {
   useAuthorization();
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/checkServer");
+  });
 
   return (
     <div className="app">
