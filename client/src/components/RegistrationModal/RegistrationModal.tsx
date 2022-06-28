@@ -6,6 +6,7 @@ import login from "../../store/thunk/login";
 import { useSelector, useDispatch } from "react-redux";
 import "./style.scss";
 import { IStore } from "../../types";
+import validateEmail from "../../services/validateEmail";
 
 const style = {
   position: "absolute" as "absolute",
@@ -29,6 +30,9 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
   const accesToken = useSelector((state: IStore) => state.user.accessToken);
   const [isRegistration, setIsRegistration] = useState(false);
 
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
   const loginHandler = () => {
     dispatch(login(email, password));
     handleClose();
@@ -45,12 +49,36 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
   });
 
   const onSubmithandler = () => {
-    if (isRegistration) {
-      registrationHandler();
-    } else {
-      loginHandler();
+    if (!validateEmail(email)) {
+      setEmailError(true);
+    }
+    if (password.length < 6) {
+      setPasswordError(true);
+    }
+
+    if (validateEmail(email) && password.length >= 6) {
+      if (isRegistration) {
+        registrationHandler();
+      } else {
+        loginHandler();
+      }
+
+      setEmail("");
+      setPassword("");
     }
   };
+
+  useEffect(() => {
+    if (passwordError && password.length > 5) {
+      setPasswordError(false);
+    }
+  }, [password, passwordError]);
+
+  useEffect(() => {
+    if (emailError && validateEmail(email)) {
+      setEmailError(false);
+    }
+  }, [email, emailError]);
 
   return (
     <Modal
@@ -66,18 +94,24 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
         </div>
 
         {isRegistration ? (
-          <form onSubmit={onSubmithandler} className="modal__registration">
+          <form
+            onSubmit={onSubmithandler}
+            className="modal__registration"
+            noValidate
+          >
             <input
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               placeholder="Email"
               type="email"
+              className={emailError ? "modal__input-error" : ""}
             ></input>
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               placeholder="Password"
               type="password"
+              className={passwordError ? "modal__input-error" : ""}
             ></input>
             <input
               onChange={(e) => setName(e.target.value)}
@@ -91,16 +125,20 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
             </button>
           </form>
         ) : (
-          <form onSubmit={onSubmithandler} className="modal__login">
+          <form onSubmit={onSubmithandler} className="modal__login" noValidate>
             <input
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               placeholder="Email"
+              type="email"
+              className={emailError ? "modal__input-error" : ""}
             ></input>
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               placeholder="Password"
+              type="password"
+              className={passwordError ? "modal__input-error" : ""}
             ></input>
             <button className="modal__submit-btn" type="submit">
               Вход

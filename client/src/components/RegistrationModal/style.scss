@@ -17,15 +17,16 @@
       border-radius: 10px;
       background: transparent;
       color: #fff;
-      &:focus {
-        border: 1px solid #fff;
-      }
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);
       }
       font-weight: 100;
     }
+  }
+
+  .modal__input-error {
+    border: 1px solid red;
   }
 
   &__title {
