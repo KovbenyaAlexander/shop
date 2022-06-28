@@ -1,25 +1,12 @@
 import AuthService from "../../services/AuthService";
 import { setUser } from "../actions";
-// import { setAuth, setUser, setLoadingStatus } from "../actions";
-// import M from "materialize-css";
-// import validateEmail from "../../../helpers/emailValidation";
+import { toast } from "react-toastify";
 
 const registration = (email, password) => {
   return async (dispatch, getState) => {
-    // const resultOfEmailvalidation = validateEmail(email);
-    // if (!resultOfEmailvalidation) {
-    // M.toast({ html: "Invalid email" });
-    // return;
-    // }
-
-    // if (password.length < 4 || password.length > 30) {
-    //   M.toast({ html: "Too short password" });
-    //   return;
-    // }
     try {
       // dispatch(setLoadingStatus(true));
       const localCart = getState().cartLocal;
-
       const response = await AuthService.registration(
         email,
         password,
@@ -29,15 +16,13 @@ const registration = (email, password) => {
       localStorage.setItem("token", response.data.accessToken);
       localStorage.setItem("email", response.data.email);
       dispatch(setUser(response.data));
-      // dispatch(setAuth(true));
-      // dispatch(setUser(response.data.user));
-      // M.toast({ html: "Registration successful" });
+
+      toast("Registration successful");
     } catch (e) {
-      console.log(e);
       if (e?.response?.data?.message) {
-        // M.toast({ html: e?.response?.data?.message });
+        toast(e?.response?.data?.message);
       } else {
-        // M.toast(`something went wrong`);
+        toast(`Server error`);
       }
     } finally {
       // dispatch(setLoadingStatus(false));

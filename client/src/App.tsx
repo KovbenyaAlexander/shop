@@ -7,6 +7,7 @@ import Main from "./Pages/Main/Main";
 import FoodDescription from "./Pages/FoodDescription/FoodDescription";
 import Order from "./Pages/Order/Order";
 import useAuthorization from "./customHooks/useAuthorization";
+import { ToastContainer, toast } from "react-toastify";
 
 const App = (): JSX.Element => {
   useAuthorization();
@@ -39,6 +40,18 @@ const App = (): JSX.Element => {
         }}
       />
 
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        toastStyle={{ backgroundColor: "rgb(212, 211, 212)" }}
+      />
       <div className="bottom-shadow" />
     </div>
   );

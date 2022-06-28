@@ -8,6 +8,8 @@ import "./style.scss";
 import { IStore } from "../../types";
 import validateEmail from "../../services/validateEmail";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
