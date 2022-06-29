@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { toggleBurger, closeBurger, logout } from "../../store/actions";
 import RegistrationModal from "../RegistrationModal/RegistrationModal";
 import { IStore } from "../../types";
