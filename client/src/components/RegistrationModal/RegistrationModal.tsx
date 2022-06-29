@@ -34,7 +34,8 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
   //   }
   // });
 
-  const onSubmithandler = () => {
+  const onSubmithandler = (e: any) => {
+    e.preventDefault();
     if (!validateEmail(email)) {
       setEmailError(true);
     }
