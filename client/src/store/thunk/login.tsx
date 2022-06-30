@@ -8,6 +8,7 @@ import { IStore } from "../../types/store-types";
 const login = (email: string, password: string, handleClose: () => void) => {
   return async (dispatch: ThunkDispatch<void, IStore, AnyAction>) => {
     try {
+
       dispatch(setLoading(true));
       const response = await axios.post(
         `${process.env.REACT_APP_SERVR_URL}/login`,
