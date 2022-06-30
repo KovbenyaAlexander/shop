@@ -49,6 +49,8 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
       } else {
         loginHandler();
       }
+      setEmail("")
+      setPassword("")
     }
   };
 

@@ -45,7 +45,7 @@
       color: #cfcfcf;
       justify-content: end;
       align-items: center;
-      padding-right: 50px;
+      padding-right: 30px;
       font-size: 20px;
 
       .login-btn {
@@ -130,23 +130,13 @@
     }
   }
 
-  &__phone {
-    &-description {
-      font-size: 12px;
-      color: #cfcfcf;
-    }
-
-    &-number {
-      font-size: 18px;
-      color: #fff;
-      font-weight: bold;
-    }
+  &__email{
+    padding-right: 20px;
   }
 
   @media (max-width: 700px) {
     .header__email {
       display: none;
-      background-color: red;
     }
   }
 

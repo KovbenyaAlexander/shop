@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://kovbenyaalexander.github.io",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
