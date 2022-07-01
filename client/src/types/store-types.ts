@@ -3,7 +3,7 @@ export interface IStore {
   orderSize: number;
   isBurgerOpen: boolean;
   user: IUser;
-  cartLocal: IGoods;
+  localCart: IGoods;
   isLoading: boolean;
 }
 

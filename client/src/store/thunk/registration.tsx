@@ -16,7 +16,7 @@ const registration = (
   ) => {
     try {
       dispatch(setLoading(true));
-      const localCart = getState().cartLocal;
+      const localCart = getState().localCart;
       const response = await AuthService.registration(
         email,
         password,
