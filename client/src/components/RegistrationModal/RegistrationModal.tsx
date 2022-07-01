@@ -3,14 +3,19 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import registration from "../../store/thunk/registration";
 import login from "../../store/thunk/login";
-import { useSelector, useDispatch } from "react-redux";
-import { IStore } from "../../types";
+import { useDispatch } from "react-redux";
 import validateEmail from "../../services/validateEmail";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./style.scss";
 
-const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
+type Props = {
+  setIsModalOpen: (isModalOpen: boolean) => void;
+  isModalOpen: boolean;
+};
+
+const ModalWindow = ({ setIsModalOpen, isModalOpen }: Props): JSX.Element => {
   const dispatch = useDispatch();
   const handleClose = () => setIsModalOpen(false);
   const [email, setEmail] = useState("");
@@ -28,18 +33,14 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
     dispatch(registration(email, password, handleClose));
   };
 
-  // useEffect(() => {
-  //   if (accesToken) {
-  //     handleClose();
-  //   }
-  // });
-
-  const onSubmithandler = (e: any) => {
+  const onSubmithandler = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     if (!validateEmail(email)) {
+      toast(`Incorrect E-Mail Address`);
       setEmailError(true);
     }
     if (password.length < 6) {
+      toast(`Password must be at least 6 characters`);
       setPasswordError(true);
     }
 
@@ -49,6 +50,8 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
       } else {
         loginHandler();
       }
+      setEmail("");
+      setPassword("");
     }
   };
 
@@ -74,8 +77,18 @@ const ModalWindow = ({ setIsModalOpen, isModalOpen }: any): JSX.Element => {
       >
         <Box sx={style} className="modal">
           <div className="modal__title">
-            <button onClick={() => setIsRegistration(false)}>Вход</button>
-            <button onClick={() => setIsRegistration(true)}>Регистрация</button>
+            <button
+              className={isRegistration ? "" : "modal__setReg-active"}
+              onClick={() => setIsRegistration(false)}
+            >
+              Вход
+            </button>
+            <button
+              className={isRegistration ? "modal__setReg-active" : ""}
+              onClick={() => setIsRegistration(true)}
+            >
+              Регистрация
+            </button>
           </div>
 
           {isRegistration ? (

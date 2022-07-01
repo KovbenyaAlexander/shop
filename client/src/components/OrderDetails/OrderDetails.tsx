@@ -47,16 +47,18 @@ const OrderDetails = (): JSX.Element => {
   };
 
   const [deliveryType, setDeliveryType] = useState("delivery");
-  const onChangeDeliveryHandler = (e: any) => setDeliveryType(e.target.value);
+  const onChangeDeliveryHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setDeliveryType(e.target.value);
 
   const [paymentType, setPaymentType] = useState("cash");
-  const onChangePaymentHandler = (e: any) => {
+  const onChangePaymentHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPaymentType(e.target.value);
   };
 
   const [deliveryTime, setDeliveryTime] = useState("asap");
-  const onChangeDeliveryTimeHandler = (e: any) =>
-    setDeliveryTime(e.target.value);
+  const onChangeDeliveryTimeHandler = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => setDeliveryTime(e.target.value);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<FormValues>();

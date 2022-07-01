@@ -1,7 +1,6 @@
 const UserModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const uuid = require("uuid");
-const mailServise = require("./mailService");
 const tokenService = require("./tokenService");
 const UserDto = require("../dtos/userDto");
 const apiError = require("../exceptions/apiError");
@@ -25,11 +24,6 @@ class UserService {
       activationLink,
       goods: localCart,
     });
-
-    // await mailServise.sendActivationMail(
-    //   email,
-    //   `${process.env.API_URL}/api/activate/${activationLink}`
-    // );
 
     const userDto = new UserDto(user);
     const tokens = tokenService.generateToken({ ...userDto });

@@ -6,7 +6,7 @@ import { IFoodCard, IStore } from "../../types";
 
 interface Props {
   isModalOpen: boolean;
-  setIsModalOpen: any;
+  setIsModalOpen: () => void;
   userInfo?: {
     comment: string;
     customTime: string;

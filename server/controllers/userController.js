@@ -100,7 +100,7 @@ class UserController {
 
   async checkServer(req, res, next) {
     try {
-      console.log(`CHECK`);
+      console.log(`OK`);
       return res.json(`OK`);
     } catch (e) {
       next(e);

@@ -143,16 +143,16 @@ export default function reducer(
     }
 
     case Actions.INC_GOODS_LOCAL: {
-      const cartLocal = { ...state.cartLocal };
-      if (cartLocal.hasOwnProperty(action.payload)) {
-        cartLocal[action.payload]++;
+      const localCart = { ...state.localCart };
+      if (localCart.hasOwnProperty(action.payload)) {
+        localCart[action.payload]++;
       } else {
-        cartLocal[action.payload] = 1;
+        localCart[action.payload] = 1;
       }
 
       return {
         ...state,
-        cartLocal,
+        localCart,
         orderSize: state.orderSize + 1,
         foodCards: {
           cold: state.foodCards.cold.map((item: IFoodCard) => {
@@ -190,15 +190,15 @@ export default function reducer(
     }
 
     case Actions.DEC_GOODS_LOCAL: {
-      const cartLocal = { ...state.cartLocal };
-      if (cartLocal[action.payload] > 0) {
-        cartLocal[action.payload]--;
+      const localCart = { ...state.localCart };
+      if (localCart[action.payload] > 0) {
+        localCart[action.payload]--;
       }
 
       return {
         ...state,
         orderSize: state.orderSize - 1,
-        cartLocal,
+        localCart,
         foodCards: {
           cold: state.foodCards.cold.map((item: IFoodCard) => {
             if (item.id === action.payload) {
@@ -234,12 +234,12 @@ export default function reducer(
     case Actions.DELETE_FOOD_FROM_CART_LOCAL: {
       let prevCountOfPurchase = 0;
 
-      const cartLocal = { ...state.cartLocal };
-      delete cartLocal[action.payload];
+      const localCart = { ...state.localCart };
+      delete localCart[action.payload];
 
       const newState = {
         ...state,
-        cartLocal,
+        localCart,
         foodCards: {
           cold: state.foodCards.cold.map((item: IFoodCard) => {
             if (item.id === action.payload) {
