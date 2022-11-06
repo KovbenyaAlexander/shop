@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ModalWindow from "../infoModal/Modal";
@@ -47,18 +47,16 @@ const OrderDetails = (): JSX.Element => {
   };
 
   const [deliveryType, setDeliveryType] = useState("delivery");
-  const onChangeDeliveryHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setDeliveryType(e.target.value);
+  const onChangeDeliveryHandler = (e: React.ChangeEvent<any>) => setDeliveryType(e.target.value);
 
   const [paymentType, setPaymentType] = useState("cash");
-  const onChangePaymentHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangePaymentHandler = (e: React.ChangeEvent<any>) => {
     setPaymentType(e.target.value);
   };
 
   const [deliveryTime, setDeliveryTime] = useState("asap");
-  const onChangeDeliveryTimeHandler = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => setDeliveryTime(e.target.value);
+  const onChangeDeliveryTimeHandler = (e: React.ChangeEvent<any>) =>
+    setDeliveryTime(e.target.value);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<FormValues>();
@@ -100,9 +98,7 @@ const OrderDetails = (): JSX.Element => {
             <div className="order__delivery-checkbox">
               <label
                 htmlFor="delivery"
-                className={
-                  deliveryType === "delivery" ? "order__radio-checked" : ""
-                }
+                className={deliveryType === "delivery" ? "order__radio-checked" : ""}
               >
                 Доставка
                 <input
@@ -118,9 +114,7 @@ const OrderDetails = (): JSX.Element => {
 
               <label
                 htmlFor="pickup"
-                className={
-                  deliveryType === "pickup" ? "order__radio-checked" : ""
-                }
+                className={deliveryType === "pickup" ? "order__radio-checked" : ""}
               >
                 Самовывоз
                 <input
@@ -138,12 +132,7 @@ const OrderDetails = (): JSX.Element => {
               <>
                 <h3>Адрес доставки</h3>
                 <div className="order__delivery-adress">
-                  <input
-                    id="street"
-                    type="text"
-                    placeholder="Улица"
-                    {...register("street")}
-                  />
+                  <input id="street" type="text" placeholder="Улица" {...register("street")} />
                   <input
                     id="houseNumber"
                     type="text"
@@ -210,9 +199,7 @@ const OrderDetails = (): JSX.Element => {
             <div className="order__payment-checkbox">
               <label
                 htmlFor="online"
-                className={
-                  paymentType === "online" ? "order__radio-checked" : ""
-                }
+                className={paymentType === "online" ? "order__radio-checked" : ""}
               >
                 <input
                   {...register("typeOfPayment")}
@@ -226,9 +213,7 @@ const OrderDetails = (): JSX.Element => {
               </label>
               <label
                 htmlFor="creditСard"
-                className={
-                  paymentType === "creditСard" ? "order__radio-checked" : ""
-                }
+                className={paymentType === "creditСard" ? "order__radio-checked" : ""}
               >
                 <input
                   {...register("typeOfPayment")}
@@ -264,9 +249,7 @@ const OrderDetails = (): JSX.Element => {
             <div className="order__delivery-time-checkbox">
               <label
                 htmlFor="asap"
-                className={
-                  deliveryTime === "asap" ? "order__radio-checked" : ""
-                }
+                className={deliveryTime === "asap" ? "order__radio-checked" : ""}
               >
                 В ближайшее время
                 <input
@@ -282,9 +265,7 @@ const OrderDetails = (): JSX.Element => {
 
               <label
                 htmlFor="customTime"
-                className={
-                  deliveryTime === "customTime" ? "order__radio-checked" : ""
-                }
+                className={deliveryTime === "customTime" ? "order__radio-checked" : ""}
               >
                 Ко времени
                 <input
@@ -299,11 +280,7 @@ const OrderDetails = (): JSX.Element => {
 
               {deliveryTime === "customTime" ? (
                 <div className="order__time-custom">
-                  <input
-                    id="customTime"
-                    type="datetime-local"
-                    {...register("customTime")}
-                  />
+                  <input id="customTime" type="datetime-local" {...register("customTime")} />
                 </div>
               ) : (
                 <p>Доставим через 40 минут</p>
@@ -313,16 +290,11 @@ const OrderDetails = (): JSX.Element => {
 
           <div
             className={
-              errors.agreement
-                ? "order__agreement-error order__agreement "
-                : "order__agreement"
+              errors.agreement ? "order__agreement-error order__agreement " : "order__agreement"
             }
           >
             <input {...register("agreement")} type="checkbox" />
-            <span>
-              Я согласен на обработку моих перс. данных в соответствии с
-              Условиями
-            </span>
+            <span>Я согласен на обработку моих перс. данных в соответствии с Условиями</span>
             <button type="submit">Оформить заказ</button>
           </div>
         </form>

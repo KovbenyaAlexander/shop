@@ -17,10 +17,9 @@ export const initialStore: IStore = {
       {
         id: "1",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 100,
-        image: "./food1.png",
+        image: "./food1.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 125,
@@ -32,10 +31,9 @@ export const initialStore: IStore = {
       {
         id: "2",
         name: "Индейка",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 2000,
-        image: "./food2.png",
+        image: "./food2.webp",
         weight: "1000г",
         numberOfPurchase: 0,
         protein: 675,
@@ -49,7 +47,7 @@ export const initialStore: IStore = {
         name: "Гусь",
         description: "Фаршированный яблоками",
         price: 300,
-        image: "./food3.png",
+        image: "./food3.webp",
         weight: "10000г",
         numberOfPurchase: 0,
         protein: 527,
@@ -61,10 +59,9 @@ export const initialStore: IStore = {
       {
         id: "4",
         name: "Утка",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 400,
-        image: "./food4.png",
+        image: "./food4.webp",
         weight: "100000г",
         numberOfPurchase: 0,
         protein: 856,
@@ -78,7 +75,7 @@ export const initialStore: IStore = {
         name: "Ягненок",
         description: "Фаршированная рисом, курагой и айвой",
         price: 500,
-        image: "./food2.png",
+        image: "./food2.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 9574,
@@ -90,10 +87,9 @@ export const initialStore: IStore = {
       {
         id: "6",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 100,
-        image: "./food1.png",
+        image: "./food1.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 322,
@@ -107,10 +103,9 @@ export const initialStore: IStore = {
       {
         id: "111",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 100,
-        image: "./food4.png",
+        image: "./food4.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 5647,
@@ -122,10 +117,9 @@ export const initialStore: IStore = {
       {
         id: "112",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 110,
-        image: "./food1.png",
+        image: "./food1.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 632,
@@ -137,10 +131,9 @@ export const initialStore: IStore = {
       {
         id: "113",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 120,
-        image: "./food3.png",
+        image: "./food3.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 236,
@@ -152,10 +145,9 @@ export const initialStore: IStore = {
       {
         id: "114",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 130,
-        image: "./food2.png",
+        image: "./food2.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 326,
@@ -167,10 +159,9 @@ export const initialStore: IStore = {
       {
         id: "115",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 140,
-        image: "./food3.png",
+        image: "./food3.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 537,
@@ -182,10 +173,9 @@ export const initialStore: IStore = {
       {
         id: "116",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 150,
-        image: "./food2.png",
+        image: "./food2.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 364,
@@ -197,10 +187,9 @@ export const initialStore: IStore = {
       {
         id: "117",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 160,
-        image: "./food1.png",
+        image: "./food1.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 346,
@@ -212,10 +201,9 @@ export const initialStore: IStore = {
       {
         id: "118",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 170,
-        image: "./food4.png",
+        image: "./food4.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 697,
@@ -230,10 +218,9 @@ export const initialStore: IStore = {
       {
         id: "119",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 180,
-        image: "./food3.png",
+        image: "./food3.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 435,
@@ -245,10 +232,9 @@ export const initialStore: IStore = {
       {
         id: "120",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 190,
-        image: "./food4.png",
+        image: "./food4.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 543,
@@ -260,10 +246,9 @@ export const initialStore: IStore = {
       {
         id: "121",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 200,
-        image: "./food1.png",
+        image: "./food1.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 46343,
@@ -275,10 +260,9 @@ export const initialStore: IStore = {
       {
         id: "122",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 210,
-        image: "./food2.png",
+        image: "./food2.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 2452,
@@ -290,10 +274,9 @@ export const initialStore: IStore = {
       {
         id: "123",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 220,
-        image: "./food3.png",
+        image: "./food3.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 1425,
@@ -305,10 +288,9 @@ export const initialStore: IStore = {
       {
         id: "124",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 230,
-        image: "./food4.png",
+        image: "./food4.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 2753,
@@ -320,10 +302,9 @@ export const initialStore: IStore = {
       {
         id: "125",
         name: "Ягненок",
-        description:
-          "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
+        description: "Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком",
         price: 240,
-        image: "./food1.png",
+        image: "./food1.webp",
         weight: "100г",
         numberOfPurchase: 0,
         protein: 752,

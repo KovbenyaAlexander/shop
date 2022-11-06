@@ -6,7 +6,7 @@ import { IFoodCard, IStore } from "../../types";
 
 interface Props {
   isModalOpen: boolean;
-  setIsModalOpen: () => void;
+  setIsModalOpen: (status: boolean) => void;
   userInfo?: {
     comment: string;
     customTime: string;
@@ -37,11 +37,7 @@ const style = {
   p: 4,
 };
 
-const ModalWindow = ({
-  setIsModalOpen,
-  isModalOpen,
-  userInfo,
-}: Props): JSX.Element => {
+const ModalWindow = ({ setIsModalOpen, isModalOpen, userInfo }: Props): JSX.Element => {
   const handleClose = () => setIsModalOpen(false);
 
   const foodCards = useSelector((state: IStore) => state.foodCards);
