@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "./static/css/main.a8a47b3f.css",
-    "main.js": "./static/js/main.c523da02.js",
+    "main.js": "./static/js/main.3e2b8f85.js",
     "static/media/promo-bg.webp": "./static/media/promo-bg.820ab8e3df7d7f1827bd.webp",
     "static/media/about-bg.webp": "./static/media/about-bg.914b5a919cc51ed0be33.webp",
     "static/media/Zing Rust Demo Base.ttf": "./static/media/Zing Rust Demo Base.859c1016e0c71c8d6597.ttf",
     "static/media/contacts-bg_.webp": "./static/media/contacts-bg_.a58f57834500d8d00296.webp",
     "index.html": "./index.html",
     "main.a8a47b3f.css.map": "./static/css/main.a8a47b3f.css.map",
-    "main.c523da02.js.map": "./static/js/main.c523da02.js.map"
+    "main.3e2b8f85.js.map": "./static/js/main.3e2b8f85.js.map"
   },
   "entrypoints": [
     "static/css/main.a8a47b3f.css",
-    "static/js/main.c523da02.js"
+    "static/js/main.3e2b8f85.js"
   ]
 }
