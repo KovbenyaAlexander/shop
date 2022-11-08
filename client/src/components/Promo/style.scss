@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Zing";
-  src: url("../../../public/fonts/Zing Rust Demo Base.ttf") format("truetype");
-}
-
 .promo {
   width: 100%;
   background: rgba(33, 31, 32, 1);
@@ -21,7 +16,7 @@
     );
 
     p {
-      font-family: "Zing", "Open Sans";
+      font-family: "Oswald", sans-serif;
       font-style: italic;
       font-size: 67px;
       color: #fff;
