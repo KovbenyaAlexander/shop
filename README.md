@@ -2,7 +2,7 @@
 
 ### [Deploy](https://kovbenyaalexander.github.io/shop/#/)
 
-#### [Get all users](https://young-mesa-36528.herokuapp.com/api/users)
+#### [Get all users](https://shop-backend-679g.onrender.com/api/users)
 
 
 
