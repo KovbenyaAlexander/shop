@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import axios from "axios";
 import getUserByEmail from "../store/thunk/getUserByEmail";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function useAuthorization() {
   const token = localStorage.getItem("token");
@@ -15,7 +13,7 @@ function useAuthorization() {
     } else {
       dispatch(getUserByEmail(email, token));
     }
-  }, []);
+  }, [token, email, dispatch]);
 
   return null;
 }
