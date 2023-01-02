@@ -43,7 +43,7 @@
     .header__login {
       display: flex;
       color: #cfcfcf;
-      justify-content: end;
+      justify-content: flex-end;
       align-items: center;
       padding-right: 30px;
       font-size: 20px;
@@ -130,7 +130,7 @@
     }
   }
 
-  &__email{
+  &__email {
     padding-right: 20px;
   }
 
